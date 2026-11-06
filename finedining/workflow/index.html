@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>周报工作流图解 — 全球品质餐饮周报</title>
+<meta name="description" content="全球品质餐饮周报每周五 14:00 更新：Muse 负责采集编辑与做网页，GitHub 负责存档与自动部署，腾讯云 COS 负责托管 mtxiaonan.com 网站。">
+<style>
+  :root{
+    --paper:#fff9f0; --paper2:#fffdf8; --card:#ffffff;
+    --ink:#2f1a1e; --ink2:#554046; --faint:#7a676b;
+    --claret:#6b2233; --claret-soft:#f7e8ea;
+    --beige:#eadfc4; --beige2:#f4ecd9;
+    --line:#d8c9b8; --line2:#e8dcc8;
+    --github:#24292f; --github-soft:#eceff2;
+    --tencent:#175ea6; --tencent-soft:#e3eef9;
+    --you:#7a5a12; --you-soft:#fbf0cd;
+    --good:#2e6b34;
+    --shadow:0 10px 28px rgba(59,28,18,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#171114; --paper2:#1d1619; --card:#241b1f;
+      --ink:#f3e9e4; --ink2:#d8c4bd; --faint:#a99692;
+      --claret:#e8a0af; --claret-soft:#3a222a;
+      --beige:#3a3122; --beige2:#2c2519;
+      --line:#4a3a3f; --line2:#3a2d31;
+      --github:#d6dde5; --github-soft:#2a3036;
+      --tencent:#8fc1f2; --tencent-soft:#1e3047;
+      --you:#e8c86a; --you-soft:#3a3018;
+      --good:#8fd196;
+      --shadow:0 10px 28px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:Georgia,"Times New Roman","Songti SC","STSong","Noto Serif SC",serif;
+    font-size:17px;line-height:1.75;}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+  .wrap{max-width:880px;margin:0 auto;padding:28px 20px 56px;background:var(--paper2)}
+  a{color:var(--claret);text-underline-offset:3px;overflow-wrap:anywhere}
+  @media (prefers-color-scheme: dark){ a{color:var(--claret)} }
+
+  /* Header */
+  .kicker{font-size:13.5px;letter-spacing:.18em;color:var(--claret);font-weight:700;text-align:center}
+  h1{margin:10px 0 8px;text-align:center;font-size:clamp(30px,6.5vw,44px);line-height:1.2;color:var(--ink);text-wrap:balance;font-weight:800}
+  .sub{text-align:center;color:var(--ink2);margin:0 auto;max-width:620px;font-size:16.5px}
+  .dateline{text-align:center;margin:14px 0 0;font-size:14.5px;color:var(--faint);letter-spacing:.08em}
+  hr.rule{border:0;border-top:2px solid var(--ink);margin:22px 0 0}
+  hr.rule-thin{border:0;border-top:1px solid var(--line);margin:6px 0 0}
+
+  /* Answer banner */
+  .answer{margin:22px 0 0;background:var(--beige);padding:20px 22px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .answer .big{font-size:clamp(26px,5.5vw,36px);line-height:1.25;font-weight:800;white-space:nowrap}
+  .answer .big em{font-style:normal;color:var(--claret)}
+  .answer .detail{flex:1;min-width:220px;font-size:15.5px;line-height:1.7;color:var(--ink2)}
+  .answer .detail strong{color:var(--ink)}
+  .next{display:inline-block;margin-top:6px;background:var(--card);border:1px solid var(--line);padding:2px 10px;font-size:14px}
+
+  /* Section heads */
+  section{margin-top:36px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:16px}
+  .sec-num{font-size:14px;letter-spacing:.1em;color:var(--claret);font-weight:800;white-space:nowrap}
+  .sec-title{font-size:23px;line-height:1.3;font-weight:800;margin:0;text-wrap:balance}
+  .sec-note{color:var(--faint);font-size:14.5px;margin:-6px 0 14px}
+
+  /* Filter */
+  .filter{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .filter button{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink2);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:14.5px;padding:7px 14px;border-radius:999px;cursor:pointer}
+  .filter button:hover{border-color:var(--claret)}
+  .filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper2);border-color:var(--ink);font-weight:700}
+  .filter .hint{font-size:13.5px;color:var(--faint);align-self:center;margin-left:2px}
+
+  /* Flow diagram */
+  .flow{list-style:none;margin:0;padding:0}
+  .step{display:flex;gap:14px;position:relative;padding:0 0 0 0}
+  .step:not(:last-child){padding-bottom:0}
+  .rail{display:flex;flex-direction:column;align-items:center;flex:0 0 44px}
+  .dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-weight:800;font-size:16px;color:#fff;flex:0 0 44px;z-index:1}
+  .line-v{width:2px;flex:1;min-height:22px;background:var(--line)}
+  .step:last-child .line-v{display:none}
+  .step-body{flex:1;background:var(--card);border:1px solid var(--line2);box-shadow:var(--shadow);
+    padding:14px 18px 12px;margin-bottom:16px;transition:opacity .2s, border-color .2s}
+  .step-body h3{margin:0 0 4px;font-size:18.5px;line-height:1.45}
+  .step-body p{margin:0;font-size:15.5px;line-height:1.7;color:var(--ink2)}
+  .step-body code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--beige2);padding:1px 6px;overflow-wrap:anywhere}
+  .role-tag{display:inline-block;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+    font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:1px 9px;border-radius:999px;margin-bottom:6px}
+  .r-muse{background:var(--claret-soft);color:var(--claret)}
+  .r-github{background:var(--github-soft);color:var(--github)}
+  .r-tencent{background:var(--tencent-soft);color:var(--tencent)}
+  .r-you{background:var(--you-soft);color:var(--you)}
+  .r-clock{background:var(--beige2);color:var(--ink2)}
+  .dot-muse{background:#6b2233}.dot-github{background:#24292f}.dot-tencent{background:#175ea6}.dot-you{background:#a87f14}.dot-clock{background:#8a6d3b}
+  @media (prefers-color-scheme: dark){
+    .dot-github{background:#4a5561}.dot-you{background:#8a6d1f}.dot-clock{background:#6b5836}
+  }
+  .flow.dim .step{opacity:.38}
+  .flow.dim .step.lit{opacity:1}
+  .flow.dim .step.lit .step-body{border-color:var(--claret)}
+
+  /* Roles */
+  .roles{display:grid;grid-template-columns:1fr;gap:16px}
+  @media (min-width:700px){ .roles{grid-template-columns:1fr 1fr 1fr} }
+  .role-card{background:var(--card);border:1px solid var(--line2);border-top:5px solid var(--line);padding:18px 18px 8px;box-shadow:var(--shadow)}
+  .role-card.c-muse{border-top-color:#6b2233}
+  .role-card.c-github{border-top-color:#24292f}
+  .role-card.c-tencent{border-top-color:#175ea6}
+  @media (prefers-color-scheme: dark){
+    .role-card.c-github{border-top-color:#8a97a5}
+  }
+  .role-card h3{margin:0 0 2px;font-size:20px}
+  .role-card .one{font-size:14.5px;color:var(--faint);margin:0 0 10px;line-height:1.6}
+  .role-card ul{margin:0 0 12px;padding:0;list-style:none}
+  .role-card li{padding:9px 0;border-top:1px solid var(--line2);font-size:15.5px;line-height:1.65}
+  .role-card li strong{display:block;font-size:15.5px}
+  .role-card li span{color:var(--ink2);font-size:14.5px;line-height:1.6}
+  .fact{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--beige2);
+    padding:8px 10px;line-height:1.7;overflow-wrap:anywhere;margin:0 0 14px;color:var(--ink2)}
+
+  /* You */
+  .you-box{border:1.5px dashed var(--you);background:var(--you-soft);padding:18px 20px}
+  .you-box h3{margin:0 0 6px;font-size:19px}
+  .you-box p{margin:0 0 8px;font-size:15.5px;color:var(--ink2)}
+  .you-box p:last-child{margin-bottom:0}
+  .you-box strong{color:var(--ink)}
+
+  /* Spec table */
+  .spec{width:100%;border-collapse:collapse;font-size:15px}
+  .spec th,.spec td{text-align:left;vertical-align:top;padding:10px 8px;border-bottom:1px solid var(--line2)}
+  .spec th{width:118px;color:var(--faint);font-weight:600;white-space:nowrap;font-size:14px}
+  .spec td{overflow-wrap:anywhere}
+  .spec td code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--beige2);padding:1px 6px}
+  @media (max-width:520px){ .spec th{width:92px} }
+
+  footer{margin-top:40px;border-top:1px solid var(--ink);padding-top:16px;font-size:14px;color:var(--faint);line-height:1.8}
+  footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="kicker sans">全球品质餐饮周报 · 工作流说明</p>
+  <h1>每周五下午，新一期准时到你手上</h1>
+  <p class="sub">从 Instagram 上找信息，到变成一个能在微信里打开、带方形缩略图的网页，中间经过三个系统接力：<strong>Muse 做内容，GitHub 管存档和部署，腾讯云负责上线给人看。</strong></p>
+  <p class="dateline">2026年11月6日 星期五 · 现行流程（2026-11-06 已跑通并上线验证）</p>
+  <hr class="rule"><hr class="rule-thin">
+
+  <div class="answer" role="region" aria-label="更新时间">
+    <div class="big">每周五 <em>14:00</em></div>
+    <div class="detail">
+      定时任务在<strong>每周五 14:00（北京时间）</strong>自动开始，Muse 做完、部署完、验证完之后，把当期链接发给你，你转发到客户微信群即可。<br>
+      <span class="next sans">下一期：2026年11月13日 星期五 14:00</span>
+    </div>
+  </div>
+
+  <!-- 01 Diagram -->
+  <section aria-labelledby="t1">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title" id="t1">一图看懂：一期周报的旅程</h2></div>
+    <p class="sec-note">点下面的按钮，可以只高亮某一方负责的环节。</p>
+
+    <div class="filter sans" role="group" aria-label="按负责方筛选流程">
+      <button type="button" data-filter="all" aria-pressed="true">全部环节</button>
+      <button type="button" data-filter="muse" aria-pressed="false">Muse</button>
+      <button type="button" data-filter="github" aria-pressed="false">GitHub</button>
+      <button type="button" data-filter="tencent" aria-pressed="false">腾讯云</button>
+      <button type="button" data-filter="you" aria-pressed="false">你</button>
+    </div>
+
+    <ol class="flow" id="flow">
+      <li class="step" data-role="clock">
+        <div class="rail"><div class="dot dot-clock">时</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-clock">定时触发</span>
+          <h3>周五 14:00，自动开工</h3>
+          <p>定时任务到点启动，不需要任何人点按钮，也不需要你提醒。</p>
+        </div>
+      </li>
+      <li class="step" data-role="muse">
+        <div class="rail"><div class="dot dot-muse">1</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-muse">Muse</span>
+          <h3>检索 Instagram 公开资料，筛选编辑</h3>
+          <p>看米其林、World's 50 Best、Asia's 50 Best 等榜单动态、餐厅与主厨自己的更新、品质连锁的新品与体验店；米其林只是其中一个榜单来源，每条都标明出处。</p>
+        </div>
+      </li>
+      <li class="step" data-role="muse">
+        <div class="rail"><div class="dot dot-muse">2</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-muse">Muse</span>
+          <h3>写成周报，做成网页和 PDF</h3>
+          <p>按报纸版式排成六个栏目，条目精简、标题尽量一行；配图不用带播放按钮的图。同一内容另排一份 A4 报纸版式的 PDF 单独交给你；网页版则把第一张图居中裁成 600×600 方形缩略图，供微信转发时显示。</p>
+        </div>
+      </li>
+      <li class="step" data-role="muse github">
+        <div class="rail"><div class="dot dot-github">3</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-muse">Muse 推送</span> <span class="role-tag r-github">GitHub 接收</span>
+          <h3>把新一期网页推到 GitHub 仓库</h3>
+          <p>文件放到 <code>finedining/&lt;日期&gt;/index.html</code>，并更新往期列表页 <code>finedining/index.html</code>。Muse 的 GitHub 应用有这个仓库的读写权限，直接推，不经人手。</p>
+        </div>
+      </li>
+      <li class="step" data-role="github">
+        <div class="rail"><div class="dot dot-github">4</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-github">GitHub</span>
+          <h3>GitHub Actions 自动部署</h3>
+          <p>仓库一有新提交，工作流 <code>deploy-finedining.yml</code> 自动运行，用存在 GitHub Secrets 里的腾讯云密钥，通过 coscmd 把 <code>finedining/</code> 同步到云存储。</p>
+        </div>
+      </li>
+      <li class="step" data-role="tencent">
+        <div class="rail"><div class="dot dot-tencent">5</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-tencent">腾讯云</span>
+          <h3>COS 托管网站，mtxiaonan.com 上线</h3>
+          <p>文件存进上海地域的 COS 存储桶，静态网站托管对外提供访问，绑定的自定义域名和 HTTPS 证书让链接是 <code>https://mtxiaonan.com/finedining/&lt;日期&gt;/</code>。</p>
+        </div>
+      </li>
+      <li class="step" data-role="muse">
+        <div class="rail"><div class="dot dot-muse">6</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-muse">Muse</span>
+          <h3>验证上线，再把链接发给你</h3>
+          <p>打开线上页面确认能访问（200）、图片和缩略图都在、顶栏是两行新格式、日期行只有日期和星期，确认无误才把当期链接连同 PDF 一起交给你。</p>
+        </div>
+      </li>
+      <li class="step" data-role="you">
+        <div class="rail"><div class="dot dot-you">你</div><div class="line-v"></div></div>
+        <div class="step-body">
+          <span class="role-tag r-you">你</span>
+          <h3>转发到客户微信群</h3>
+          <p>收到链接直接转发即可，微信里会带方形缩略图。本期示例：<a href="https://mtxiaonan.com/finedining/2026-11-06/">mtxiaonan.com/finedining/2026-11-06/</a></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- 02 Roles -->
+  <section aria-labelledby="t2">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title" id="t2">三方分工，各管一段</h2></div>
+
+    <div class="roles">
+      <div class="role-card c-muse">
+        <h3>Muse</h3>
+        <p class="one">编辑部 + 制作间：负责内容和把内容做成网页。</p>
+        <ul>
+          <li><strong>找信息</strong><span>每周五检索 Instagram 公开资料，覆盖榜单、餐厅、主厨与品质连锁动态。</span></li>
+          <li><strong>写与编</strong><span>筛选、核对来源、写短摘要、提炼趋势归纳，并注明哪些是归纳、不是帖子原话。</span></li>
+          <li><strong>做网页与 PDF</strong><span>报纸式排版、配图处理、做微信方形缩略图和分享信息（og 标签）；同一内容另出 A4 版式 PDF 单独交付，不挂在网页上。</span></li>
+          <li><strong>送上线并验收</strong><span>把文件推到 GitHub，部署后打开线上页面逐项验证，再把链接发给你。</span></li>
+        </ul>
+        <p class="fact">定时：每周五 14:00<br>署名：美团亦楠的AI助理</p>
+      </div>
+
+      <div class="role-card c-github">
+        <h3>GitHub</h3>
+        <p class="one">档案室 + 传送带：负责存文件和自动把文件送到云上。</p>
+        <ul>
+          <li><strong>存档</strong><span>每一期网页和往期列表都存在仓库里，有版本记录，随时可查可回退。</span></li>
+          <li><strong>自动部署</strong><span>Actions 工作流在每次提交后自动运行，不需要人去点部署按钮。</span></li>
+          <li><strong>保管密钥</strong><span>腾讯云的 SecretId / SecretKey 存在仓库 Secrets 里，部署时才取用，不写在代码里。</span></li>
+        </ul>
+        <p class="fact">仓库：xiaonan1988sh/<br>restaurant-skill-generator<br>工作流：.github/workflows/<br>deploy-finedining.yml</p>
+      </div>
+
+      <div class="role-card c-tencent">
+        <h3>腾讯云</h3>
+        <p class="one">播映厅：负责让所有人能打开这个网页。</p>
+        <ul>
+          <li><strong>COS 存储</strong><span>网页和图片实际存放的对象存储桶，开启了静态网站托管、公开读取。</span></li>
+          <li><strong>域名</strong><span>你的域名 mtxiaonan.com 已完成 ICP 备案，DNS 指向 COS 的网站入口。</span></li>
+          <li><strong>HTTPS 证书</strong><span>已绑定 DV 证书，链接是 https 开头，微信里打开不报不安全。</span></li>
+        </ul>
+        <p class="fact">存储桶：mtxiaonan-1414473915<br>地域：ap-shanghai（上海）<br>地址：mtxiaonan.com/finedining/</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 You -->
+  <section aria-labelledby="t3">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title" id="t3">你需要做什么</h2></div>
+    <div class="you-box">
+      <h3>平时：什么都不用做，等链接就行</h3>
+      <p>出刊、做网页、推仓库、部署、验证，都已经自动化并在 2026-11-06 完整跑通了一遍。你每周唯一动作是<strong>把 Muse 发你的当期链接转发到微信群</strong>。</p>
+      <p>一个小提醒：微信会缓存第一次抓到的分享图。如果某期你先发了一个还没加缩略图的版本，同一个链接再发可能还是旧样子，隔一会儿或换个群发就会刷新。</p>
+      <p>域名、证书、密钥、仓库权限这些一次性配置都已经配好，不需要每周维护；真有哪一步出问题，Muse 会在验证环节发现并处理，处理不了会直接告诉你卡在哪一步。</p>
+    </div>
+  </section>
+
+  <!-- 04 Spec -->
+  <section aria-labelledby="t4">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title" id="t4">关键信息速查</h2></div>
+    <table class="spec">
+      <tr><th>出刊节奏</th><td>每周五 14:00（北京时间），定时任务名 weekly-fine-dining-briefing</td></tr>
+      <tr><th>下一期</th><td>2026年11月13日 星期五</td></tr>
+      <tr><th>当期地址</th><td><code>https://mtxiaonan.com/finedining/&lt;日期&gt;/</code>，如 <a href="https://mtxiaonan.com/finedining/2026-11-06/">2026-11-06 期</a></td></tr>
+      <tr><th>往期列表</th><td><a href="https://mtxiaonan.com/finedining/">https://mtxiaonan.com/finedining/</a></td></tr>
+      <tr><th>信息来源</th><td>Instagram 公开资料，页面顶栏两行注明来源与编辑</td></tr>
+      <tr><th>仓库</th><td><code>xiaonan1988sh/restaurant-skill-generator</code>（main 分支，finedining/ 目录）</td></tr>
+      <tr><th>云存储</th><td>腾讯云 COS 桶 <code>mtxiaonan-1414473915</code>，上海地域，静态网站托管</td></tr>
+      <tr><th>形式</th><td>网页版上线 mtxiaonan.com，微信转发带 600×600 方形缩略图；另有同内容的 A4 PDF 版单独交付，网页上不挂 PDF 链接</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>全球品质餐饮周报 · 工作流图解 — Muse 负责内容与制作，GitHub 负责存档与自动部署，腾讯云 COS 负责托管 mtxiaonan.com。</p>
+    <p>流程状态以 2026-11-06 实际上线验证为准：自动部署已跑通，本期页面、往期列表与 5 张图片均可正常访问。</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var flow = document.getElementById('flow');
+  var steps = flow.querySelectorAll('.step');
+  var btns = document.querySelectorAll('.filter button[data-filter]');
+  function apply(f){
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-filter')===f ? 'true':'false'); });
+    if(f==='all'){ flow.classList.remove('dim'); steps.forEach(function(s){ s.classList.remove('lit'); }); return; }
+    flow.classList.add('dim');
+    steps.forEach(function(s){
+      var roles = (s.getAttribute('data-role')||'').split(' ');
+      s.classList.toggle('lit', roles.indexOf(f)!==-1);
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-filter')); });
+  });
+})();
+</script>
+</body>
+</html>
