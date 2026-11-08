@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'finedining/**'
+      - 'education/**'
       - '.github/workflows/deploy-finedining.yml'
   workflow_dispatch:
 
@@ -26,3 +27,15 @@ jobs:
         run: |
           coscmd config -a "$TENCENT_SECRET_ID" -s "$TENCENT_SECRET_KEY" -b mtxiaonan-1414473915 -r ap-shanghai
           coscmd upload -r finedining/ finedining/
+      - name: Fetch education thumbnail from Drive
+        run: |
+          mkdir -p education/xiaoshengchu/images
+          curl -fL -o education/xiaoshengchu/images/thumb.jpg "https://drive.google.com/uc?export=view&id=1hwWAM5gPukVyNAUBh-8wv8FLpi0S4kl9"
+          file education/xiaoshengchu/images/thumb.jpg | grep -qi jpeg || (echo "thumbnail is not a JPEG" && exit 1)
+      - name: Sync education/ to COS
+        env:
+          TENCENT_SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
+          TENCENT_SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
+        run: |
+          coscmd config -a "$TENCENT_SECRET_ID" -s "$TENCENT_SECRET_KEY" -b mtxiaonan-1414473915 -r ap-shanghai
+          coscmd upload -r education/ education/
