@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>小升初过程备考计划</title>
+<meta property="og:title" content="小升初过程备考计划" />
+<meta property="og:description" content="数学（重点）＞ 英语 ＞ 语文：四年级到 2029 年小升初，按学期排的水平、题型与证书节奏。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mtxiaonan.com/education/xiaoshengchu/" />
+<meta property="og:image" content="https://mtxiaonan.com/education/xiaoshengchu/images/thumb.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --surface:#ffffff;
+    --surface-2:#eef1ee;
+    --ink:#19211d;
+    --ink-2:#43514a;
+    --muted:#68766e;
+    --line:#d9dfd9;
+    --accent:#0e5a46;
+    --accent-ink:#0e5a46;
+    --accent-soft:#e3efe9;
+    --warn-bg:#fdf6e3;
+    --warn-line:#dfc26a;
+    --warn-ink:#5c4705;
+    --danger:#9c2b1d;
+    --danger-soft:#fbeae7;
+    --badge-official:#0e5a46;
+    --badge-repost:#7a5a12;
+    --badge-parent:#6b4a8a;
+    --badge-guess:#57606a;
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#111513;
+      --surface:#1a1f1c;
+      --surface-2:#222825;
+      --ink:#e9edea;
+      --ink-2:#c2ccc5;
+      --muted:#97a39b;
+      --line:#2e3631;
+      --accent:#63c7a9;
+      --accent-ink:#7fd4ba;
+      --accent-soft:#1d2f29;
+      --warn-bg:#2c2716;
+      --warn-line:#6e5c22;
+      --warn-ink:#ecd48a;
+      --danger:#f0937f;
+      --danger-soft:#33201c;
+      --badge-official:#63c7a9;
+      --badge-repost:#e3c26a;
+      --badge-parent:#c4a3e8;
+      --badge-guess:#a8b2ab;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:16px; line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 20px 72px;}
+  h1,h2,h3{font-family:"Noto Serif SC","Songti SC",serif; line-height:1.35; margin:0;}
+  h2{font-size:26px; font-weight:900; margin-bottom:6px;}
+  h3{font-size:19px; font-weight:700;}
+  p{margin:0 0 12px;}
+  a{color:var(--accent-ink); text-decoration:underline; text-underline-offset:3px; word-break:break-all;}
+  .sec{margin-top:56px;}
+  .sec-head{margin-bottom:18px;}
+  .sec-head .no{font-size:13px; letter-spacing:.14em; color:var(--accent-ink); font-weight:700;}
+  .sec-head p.lede{color:var(--ink-2); max-width:44em;}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:44px 0 8px;}
+  .hero .context{font-size:14px; color:var(--muted); margin-bottom:14px;}
+  .hero .context b{color:var(--ink-2); font-weight:700;}
+  h1{font-size:34px; font-weight:900; margin-bottom:14px;}
+  .hero .sub{font-size:17px; color:var(--ink-2); max-width:42em;}
+  .hero .sub strong{color:var(--ink);}
+  .legend{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:22px; font-size:13px; color:var(--muted);}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+
+  .badge{display:inline-block; font-size:12px; font-weight:700; line-height:1; padding:4px 8px; border-radius:5px; border:1px solid currentColor; white-space:nowrap; vertical-align:1px;}
+  .b-official{color:var(--badge-official);}
+  .b-repost{color:var(--badge-repost);}
+  .b-parent{color:var(--badge-parent);}
+  .b-guess{color:var(--badge-guess);}
+
+  /* ---------- callouts ---------- */
+  .callout{border:1px solid var(--warn-line); background:var(--warn-bg); color:var(--warn-ink); border-radius:var(--radius); padding:18px 20px; margin-top:24px;}
+  .callout h3{margin-bottom:8px; font-size:17px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout.danger{border-color:var(--danger); background:var(--danger-soft); color:var(--ink);}
+  .callout.danger h3{color:var(--danger);}
+  .plain-note{border:1px solid var(--line); background:var(--surface); border-radius:var(--radius); padding:16px 20px;}
+  .plain-note p:last-child{margin-bottom:0;}
+
+  /* ---------- nav ---------- */
+  nav.toc{position:sticky; top:0; z-index:20; background:var(--bg); padding:12px 0 10px; margin-top:26px; border-bottom:1px solid var(--line);}
+  nav.toc ul{display:flex; flex-wrap:wrap; gap:6px; list-style:none; margin:0; padding:0;}
+  nav.toc a{display:inline-block; text-decoration:none; color:var(--ink-2); font-size:14px; padding:5px 12px; border:1px solid var(--line); border-radius:999px; background:var(--surface);}
+  nav.toc a:hover{color:var(--accent-ink); border-color:var(--accent);}
+
+  /* ---------- tables ---------- */
+  .table-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface);}
+  table{border-collapse:collapse; width:100%; font-size:14.5px; line-height:1.6;}
+  th,td{text-align:left; vertical-align:top; padding:10px 14px; border-bottom:1px solid var(--line);}
+  tr:last-child td{border-bottom:none;}
+  th{background:var(--surface-2); font-weight:700; white-space:nowrap;}
+  td.subj{font-weight:700; white-space:nowrap;}
+  .tbl-cap{font-size:13px; color:var(--muted); margin:8px 2px 20px;}
+  @media (max-width:640px){
+    table.stack, table.stack thead, table.stack tbody, table.stack tr, table.stack th, table.stack td{display:block; width:auto;}
+    table.stack thead{display:none;}
+    table.stack tr{border-bottom:1px solid var(--line); padding:6px 0;}
+    table.stack tr:last-child{border-bottom:none;}
+    table.stack td{border-bottom:none; padding:4px 14px;}
+  }
+
+  /* ---------- selection blocks ---------- */
+  .sel-block{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px 22px 8px; margin-bottom:20px;}
+  .sel-block > h3{margin-bottom:4px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .sel-block .meta{font-size:14px; color:var(--muted); margin-bottom:14px;}
+  .unknown{background:var(--surface-2); border-radius:8px; padding:14px 16px; margin-bottom:14px;}
+  .unknown p:last-child{margin-bottom:0;}
+
+  /* ---------- subject cards ---------- */
+  .subj-grid{display:grid; grid-template-columns:1fr; gap:16px;}
+  @media (min-width:760px){ .subj-grid{grid-template-columns:repeat(3,1fr);} }
+  .subj-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:20px;}
+  .subj-card h3{font-size:20px; margin-bottom:2px;}
+  .subj-card .verdict{font-weight:700; color:var(--accent-ink); margin-bottom:10px; font-size:15px;}
+  .subj-card ul{margin:0; padding-left:1.15em;}
+  .subj-card li{margin-bottom:8px; font-size:14.5px; line-height:1.65;}
+  .subj-card li:last-child{margin-bottom:0;}
+
+  /* ---------- semester switcher ---------- */
+  .sem-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
+  .sem-tabs button{
+    font:inherit; font-size:14.5px; font-weight:500; cursor:pointer;
+    padding:8px 14px; border-radius:8px; border:1px solid var(--line);
+    background:var(--surface); color:var(--ink-2); text-align:left; line-height:1.4;
+  }
+  .sem-tabs button small{display:block; font-size:12px; color:var(--muted); font-weight:400;}
+  .sem-tabs button[aria-selected="true"]{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .sem-tabs button[aria-selected="true"] small{color:rgba(255,255,255,.8);}
+  @media (prefers-color-scheme: dark){
+    .sem-tabs button[aria-selected="true"]{color:#0d1512;}
+    .sem-tabs button[aria-selected="true"] small{color:rgba(13,21,18,.7);}
+  }
+  .sem-panel{display:none; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .sem-panel.active{display:block;}
+  .sem-panel .focus{font-size:15px; background:var(--accent-soft); border-radius:8px; padding:12px 16px; margin-bottom:18px;}
+  .sem-panel .focus b{color:var(--accent-ink);}
+  .sem-row{padding:14px 0; border-top:1px solid var(--line);}
+  .sem-row:first-of-type{border-top:none; padding-top:2px;}
+  .sem-row h4{margin:0 0 6px; font-size:16.5px; font-family:"Noto Serif SC",serif;}
+  .sem-row .rowline{font-size:14.5px; margin-bottom:5px; color:var(--ink-2);}
+  .sem-row .rowline b{color:var(--ink);}
+  .sem-row .amount{font-size:13.5px; color:var(--muted);}
+
+  /* ---------- whitelist ---------- */
+  .wl-group{margin-bottom:26px;}
+  .wl-group h3{margin-bottom:4px;}
+  .wl-group .g-note{font-size:14px; color:var(--muted); margin-bottom:10px;}
+
+  /* ---------- weekly list ---------- */
+  .week-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  @media (min-width:760px){ .week-list{grid-template-columns:1fr 1fr;} }
+  .week-list li{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:13px 16px; font-size:14.5px;}
+  .week-list li b{display:block; margin-bottom:2px;}
+  .week-list li.redline{border-color:var(--danger); background:var(--danger-soft); grid-column:1 / -1;}
+
+  .open-q{margin:0; padding-left:1.2em;}
+  .open-q li{margin-bottom:9px; font-size:15px; color:var(--ink-2);}
+  .open-q li b{color:var(--ink);}
+
+  .sources{font-size:13.5px; color:var(--muted);}
+  .sources h3{font-size:15px; color:var(--ink); margin:18px 0 6px; font-family:"Noto Sans SC",sans-serif;}
+  .sources ul{margin:0; padding-left:1.2em;}
+  .sources li{margin-bottom:5px;}
+  footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line); font-size:13px; color:var(--muted);}
+  footer p{margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="context">对象：<b>朝阳区小学四年级</b>（安贞学区）｜ 目标节点：<b>2029 年小升初</b> ｜ 备考顺序：<b>数学（重点）＞ 英语 ＞ 语文</b> ｜ 英语起点：<b>已通过 PET（B1）→ 约一年后考 FCE（B2）</b></p>
+    <h1>小升初过程备考计划</h1>
+    <p class="sub">你这次要的两件事，都在这页里对账：<strong>第一件，盯报名</strong>——四所学校、六条活动线现在怎么盯、多久查一次、什么时候加密、女儿哪一年轮到，都列在第 01 节的盯防总览里；<strong>第二件，规划过程</strong>——从现在开始，数学先学什么、英语按已通过 PET 的水平怎么走向 FCE、语文具体读哪些书、写哪几类作文，按学期排在第 03、04 节。每个结论都标了来源可信度，查不到的直接写查不到，不编分数线和通过率。</p>
+    <div class="legend" aria-label="可信度图例">
+      <span><i class="badge b-official">官方</i> 教育部 / 市教委 / 区教委文件、学校官网、剑桥官网</span>
+      <span><i class="badge b-repost">转载站</i> 北京小升初网、自主选拔在线等汇总的家长分享</span>
+      <span><i class="badge b-parent">家长分享</i> 论坛、自媒体的单方回忆</span>
+      <span><i class="badge b-guess">推断</i> 由题型反推的判断，不是官方定级</span>
+    </div>
+    <div class="callout">
+      <h3>先把底线说清：证书和成绩，按官方文件都不能当录取依据</h3>
+      <p><span class="badge b-official">官方</span> 北京市教委、朝阳区 2026 年义务教育入学意见明确：<strong>严禁以考试成绩和各类竞赛证书、培训竞赛成绩、考级证明等作为招生依据；严禁以面试、评测、接收简历等形式选拔学生；严禁以培训班、校园开放日、冬夏令营等形式提前招生、选拔学生。</strong>教育部 2025—2028 年白名单通知同样写明：竞赛及结果<strong>不得作为中小学招生入学的依据</strong>。</p>
+      <p>所以这份计划里所有题型、竞赛、证书的定位都是<strong>“练能力、留真实经历”</strong>，不是录取凭证。下面凡是小五班、王选、嘉年华的具体考题，都没有官方试卷佐证，全部来自转载站的家长回忆——请按“家长圈经验”对待。</p>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="本页目录">
+    <ul>
+      <li><a href="#watch">盯防总览：都安排好了吗</a></li>
+      <li><a href="#exams">各活动考什么</a></li>
+      <li><a href="#subjects">三科练到什么水平</a></li>
+      <li><a href="#plan">按学期过程计划</a></li>
+      <li><a href="#certs">证书与竞赛</a></li>
+      <li><a href="#weekly">每周对照清单</a></li>
+      <li><a href="#unknown">还没查清的</a></li>
+      <li><a href="#sources">来源</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ 01. 盯防总览 ============ -->
+  <section class="sec" id="watch">
+    <div class="sec-head">
+      <div class="no">01</div>
+      <h2>盯防总览：你问的“都安排好了吗”</h2>
+      <p class="lede">结论先说：<strong>六条活动线都已安排盯防</strong>。日常是每周查一次，到了关键窗口自动加密到每天一次；<strong>只有一个已知缺口——小五班若落在 12 月或春季，目前只有周查、没有每日加密，已在表中如实标出</strong>。下面的窗口和女儿的对应年级，都是按往年规律推算，以当年通知为准；凡官方简章没查到的，都在最后一列和正文里标明。</p>
+    </div>
+    <div class="plain-note" style="margin-bottom:16px;">
+      <p><strong>日常节奏：</strong>四校盯防每周一次，<strong>周一上午约 09:40</strong> 查北京中学、八十中、朝阳外国语学校、人大附中朝阳分校四所学校的新通知（科学嘉年华、开放日、小五班／特色选拔、招生），<strong>只在有新消息时报告，没新消息不打扰</strong>，一直盯到 <strong>2029 年 9 月入学</strong>为止。查的渠道是学校官网和转载站（北京小升初网、北京小升初信息网、自主选拔在线、北京高考在线）。</p>
+      <p><strong>必须知道的局限：</strong>我<strong>不能实时监控学校微信公众号</strong>，网页检索比学校自己的公众号首发可能<strong>慢 1–2 天</strong>。所以四所学校的官方微信公众号请你们自己也关注，那是最快的首发渠道，我这边是第二道网，避免漏掉转载和官网信息。</p>
+    </div>
+    <div class="table-scroll">
+      <table class="stack">
+        <thead><tr><th>活动线</th><th>往年窗口（推算）</th><th>女儿的窗口</th><th>怎么盯 · 加密安排</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td class="subj">北京中学 · 小五班</td><td>五年级学年内，年份间差异大：2024 年为 12 月初试／复试，2023 年为次年 2–3 月；到底落在哪个月无法提前知道</td><td><strong>整个五年级（2027.9–2028.6）都要盯</strong>；2025 参考名单共 33 所小学，2029 届范围未证实</td><td>含在四校周查内（全年每周一次）；已设的加密只有一段：<strong>2027 年 10 月 20 日–11 月底每天一次</strong>（这段加密是此前为 10–11 月嘉年华窗口设的），<strong>2027 年 12 月 1 日起恢复周查</strong>。<strong>如实标注薄弱点：</strong>若小五班像 2024 年落在 12 月、或像 2023 年落在次年春季，目前都只有周查、没有每日加密，消息可能比每日加密时慢几天——这是当前安排的已知缺口，不是已全覆盖</td><td><strong>已安排（周查全年＋秋季加密；12 月与春季未加密）</strong></td></tr>
+          <tr><td class="subj">北京中学 · 科学嘉年华</td><td>往年在 <strong>11 月</strong>，报名截止约在活动前数日上午 8:00；对象为朝阳区四至七年级</td><td>四、五、六年级每年都可参加：<strong>2027、2028 年 11 月</strong>是五、六年级场次</td><td>含在四校周查内；每年 <strong>10–11 月重点查</strong>，与四校加密期重合（2027 年 10 月 20 日起每天一次）</td><td><strong>已安排</strong></td></tr>
+          <tr><td class="subj">八十中 · “王选”</td><td>活动一般 <strong>12 月前后</strong>，通知提前一个多月：2025 年转载站在 <strong>10 月 22 日</strong>已发报名（线上答题＋邮箱简历 wangxuan@bj80.com）</td><td>主要面向六年级：<strong>2028 年 10–12 月是正式窗口</strong>；2027 年 12 月（五年级）先看一次、熟悉流程</td><td>含在四校周查内，每年 <strong>10–12 月重点查</strong>；另设单独加密：<strong>2028 年 10 月 15 日起每天一次</strong>，到 2028 年年底活动结束再恢复周查，并提醒准备简历</td><td><strong>已安排</strong></td></tr>
+          <tr><td class="subj">八十中 · 冬令营（冬季体验营／寒假营）</td><td><span class="badge b-repost">转载站</span> 称面向数学、信息学有特长的朝阳区学生；<span class="badge b-parent">家长分享</span> 称 <strong>12 月中旬官网报名、12 月 31 日截止，1 月中旬开营 4 天</strong>。官方简章原文未查到</td><td><strong>2028 年 1 月（五年级）先参加一次</strong>熟悉流程；<strong>2029 年 1 月（六年级）是关键一次</strong></td><td>含在四校周查内，每年 <strong>12 月–次年 1 月重点查</strong>八十中官网与转载站；另设单独加密：<strong>2028 年 12 月 1 日起每天一次</strong>，到 2029 年 2 月再恢复周查</td><td><strong>已安排</strong></td></tr>
+          <tr><td class="subj">八十中 · 夏令营／暑期活动</td><td><strong>往年规律未核实</strong>：本次检索未找到与冬令营对应的、稳定的八十中小学段夏令营报名规律，不编时间</td><td>如有，推测在五、六年级暑期前后；以当年通知为准</td><td>含在四校周查内；另已安排 <strong>2028 年 5 月起加密盯防</strong>暑期活动通知，避免暑期窗口漏报</td><td><strong>已安排（规律待核实）</strong></td></tr>
+          <tr><td class="subj">朝阳外国语学校 ＋ 人大附中朝阳分校</td><td>本次检索<strong>未找到</strong>这两所学校有类似小五班／王选的单独提前选拔活动；可见信息主要是开放日、招生与派位通知（朝外在安贞学区内，是学区保底线）</td><td>六年级派位与开放日窗口：<strong>2029 年春季</strong>为主；开放日有则参加</td><td>两校均含在四校周查内，查开放日、招生、派位新通知；名称提醒：“人朝分”易与<strong>人大附中朝阳学校</strong>混淆，报告时会写清是哪一所</td><td><strong>已安排（无单独选拔可盯）</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-cap">你需要自己做的只有一件事：关注四所学校的官方微信公众号（首发最快）。其余检索、比对“是不是新消息”、窗口前加密，都已在上面的安排里。任何一条线如果当年政策取消或改期，我只能在通知出来后第一时间告诉你，无法提前预知——这也是表中多处写“未证实／待核实”的原因。</p>
+  </section>
+
+  <!-- ============ 1. 三个选拔考什么 ============ -->
+  <section class="sec" id="exams">
+    <div class="sec-head">
+      <div class="no">02</div>
+      <h2>各活动，到底考什么</h2>
+      <p class="lede">先摸清“考什么”，才知道日常练什么。信息完整度差别很大：小五班有一届完整的家长回忆，王选只有方向、没有题型，嘉年华只有一个来源的机考描述，冬令营只有转载与家长分享、没有官方简章，朝外和人朝分则没有查到单独的提前选拔。</p>
+    </div>
+
+    <div class="sel-block">
+      <h3>北京中学小五班 <span class="badge b-repost">转载站 · 家长回忆</span></h3>
+      <p class="meta">最可靠的公开记录只有 2024 年一届（初试＋复试）。2023 年只查到时间线（2 月 24 日一轮、3 月 15 日二轮机考），具体题型未找到；标题称“2025 年试题”的文章，正文仍是 2024 年内容，未找到与之不同的 2025 年实际考题。选拔范围 2025 参考名单共 33 所小学，但 2029 年范围是否不变未证实。</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th colspan="3">2024 年初试（家长回忆）</th></tr>
+          <tr><th>科目</th><th>时间</th><th>题型</th></tr></thead>
+          <tbody>
+            <tr><td class="subj">语文</td><td>45 分钟</td><td><strong>2 篇作文，无阅读理解客观题记录</strong>：① 选材作文——名著中的角色，哪些让你觉得遗憾并有启发；② 关于“糖，不止有甜味，还有什么味道”的一篇小作文</td></tr>
+            <tr><td class="subj">数学</td><td>30 分钟</td><td>三角形、位置（数对）、逻辑推理、优化、相遇追及问题结合、速度差与速度和、一个立体图形的展开</td></tr>
+            <tr><td class="subj">英语</td><td>15 分钟</td><td><strong>2 篇作文，无听力 / 阅读记录</strong>：① 你想给外国朋友送什么样的礼物，为什么？② 给外国朋友讲中国故事，写出故事梗概</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-cap">来源：北京小升初网 xschu.com、自主选拔在线 zizzs.com，两家转载一致。</p>
+
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th colspan="3">2024 年复试（家长回忆）</th></tr>
+          <tr><th>科目</th><th>时间</th><th>题型</th></tr></thead>
+          <tbody>
+            <tr><td class="subj">语文</td><td>30 分钟</td><td><strong>2 篇作文</strong>：① 从所给句子中选一个令你有感受的句子并写原因，题目自拟，<strong>不少于 300 字</strong>（选项含李白“床前明月光，疑是地上霜”、俄国作者的一句话、微博网友的一句话）；② 如果把手机上的朋友圈社交 APP 都删掉，生活中的距离是更近还是更远，为什么，题目自拟，<strong>不少于 200 字</strong></td></tr>
+            <tr><td class="subj">数学</td><td>45 分钟 · 8 题</td><td>① 小区停车问题；② 24 个边长 2 厘米的正方形拼图，求周长最短的拼法；③ 沙漏模型，求阴影部分面积；④ 两题关于钱币和圆的面积；⑤ 互质长宽的长方形，从左下角到右下角画线，有多少个小图形；⑥ 三个旅行团单独买票花费不同、一起买票可省钱，求三个旅行团各多少人</td></tr>
+            <tr><td class="subj">英语</td><td>15 分钟</td><td><strong>2 篇作文</strong>：① 用 plane、warm、share 三个词发挥想象串写一篇作文，<strong>不少于 30 个词</strong>；② 用英文讲述图书馆很受欢迎、给你带来了什么收获的故事，<strong>40–50 词之间</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-cap">个别题干转述不完整（如旅行团省多少钱的数字缺失），家长回忆原文即如此。分数线、通过率：<strong>未找到任何可信数据</strong>；“约 300 人”“80 人”等规模说法互相冲突，不采用为定论。</p>
+
+      <div class="unknown">
+        <p><strong>一条未证实的传闻：</strong><span class="badge b-repost">转载站一行字</span> 2026 小升初汇总中写“2025 年 9 月网传北中‘小五班’没有，将被新成立的朝阳科学教育中心代替”。这与科学教育中心 2025 年 9 月落户北京中学在时间上重合，但<strong>没有任何官方文件说取消小五班</strong>。2027—2028 年须看当年通知，不能据此放弃或押注任何一条路。</p>
+      </div>
+    </div>
+
+    <div class="sel-block">
+      <h3>八十中“王选” <span class="badge b-repost">转载站</span></h3>
+      <p class="meta">“王选”创新实验基地：前身是 2012 年成立的王选创新实验班，2022 年成立基地。高中班型定位为数学与信息科学课程融合，培养逻辑思维和计算思维拔尖创新后备人才。</p>
+      <div class="table-scroll">
+        <table>
+          <tbody>
+            <tr><td class="subj">形式</td><td><strong>线上答题 ＋ 邮箱投递简历</strong></td></tr>
+            <tr><td class="subj">时间</td><td>一般每年 <strong>12 月份前后</strong>；2025 年活动面向 2026 年小升初家长，10 月开放报名准备</td></tr>
+            <tr><td class="subj">报名 / 邮箱</td><td>报名入口据称为八十中官网 www.bj80.com；简历投递邮箱 <strong>wangxuan@bj80.com</strong>（本次调研未能在官网原文中核实）</td></tr>
+            <tr><td class="subj">考察方向</td><td>转载的丘成桐少年班介绍称：“王选活动则以<strong>科技创新和信息学水平</strong>为导向，考查学生<strong>临场问题解决能力</strong>，挖掘竞赛和科创潜力股。”转载另称王选活动和冬令营是八十中丘成桐少年班选拔的重要途径之一</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-cap">来源：北京小升初网 xschu.com、北京高考在线 gaokzx.com 转载。</p>
+      <div class="unknown">
+        <p><strong>查不到的，不编：</strong>线上答题考几科、分值、题量、时长，是纯数学题还是含编程 / 逻辑题——<strong>公开渠道均未找到</strong>。简历方面，<strong>未找到八十中官方发布的简历要求、评价标准或“看重证书”清单</strong>；转载站只给了邮箱和“准备简历”的提示。任何自称“王选简历模板 / 必备证书 / 历年真题”的说法，本次检索中都没有可核实的公开来源。</p>
+        <p><span class="badge b-guess">推断</span> 基于班型定位，家长圈通常认为有帮助的经历是：校内数学成绩与思维拓展、编程 / 信息学学习与作品（Scratch / Python / C++）、科技创新或科学实验项目、白名单科技类竞赛参与经历。以上是<strong>家长圈认为</strong>，不是学校公布的标准；且按官方禁令，简历本身就不应作为招生依据。</p>
+      </div>
+    </div>
+
+    <div class="sel-block">
+      <h3>北中科学嘉年华机考 <span class="badge b-parent">家长分享 · 单一来源</span></h3>
+      <p class="meta"><span class="badge b-official">官方</span> 能确认的只有活动本身：朝阳区科学教育中心 2025 年 9 月 11 日落户北京中学；2025 年 11 月活动面向朝阳区<strong>四、五、六、七年级</strong>、对科学有浓厚兴趣的学生，地点在北京中学本部，半天、<strong>免费</strong>，报名截止 11 月 26 日上午 8:00。<strong>机考环节只在家长分享中出现，官方通知未提及机考、四部分或选拔功能。</strong>下面四部分只有“数形规律约 70 题”一个数字有来源，其余题量、分值、难度排序均未找到。</p>
+      <div class="table-scroll">
+        <table class="stack">
+          <thead><tr><th>部分</th><th>家长分享的描述</th><th>能力要求（解读）</th></tr></thead>
+          <tbody>
+            <tr><td class="subj">① 数形规律</td><td>约 70 题，难度最低，类似瑞文测试题型，找规律</td><td>流体推理、模式识别：图形数量增减、旋转、翻转、对称、组合、行 / 列规律</td></tr>
+            <tr><td class="subj">② 瞬时记忆</td><td>快速判断图形位置、是否为对称图形等，<strong>图形展示仅 1 秒</strong></td><td>工作记忆、视觉短时记忆、注意速度：在 1 秒内编码图形位置与对称性并作判断</td></tr>
+            <tr><td class="subj">③ 折纸穿洞</td><td>考察几何感知能力、空间思维</td><td>视觉空间处理：折叠次数与孔数关系、折线镜像对称、展开后孔位推演</td></tr>
+            <tr><td class="subj">④ 文字词语推演</td><td>侧重分析能力、不考死记硬背（具体题型未在分享中展开）</td><td>语言推理：词语关系、类比、逻辑推演、语义分析</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-cap">其他家长分享的定性描述（非官方）：机考为 1–2 小时上机测试，其余时间为科技体验；报名时需填写教育 ID；家长圈自己的说法是“<strong>全程无辅导班针对性准备空间，主打筛选天然牛娃</strong>”。公开渠道没有真题，不要买所谓“嘉年华真题 / 保过班”。</p>
+    </div>
+
+    <div class="sel-block">
+      <h3>八十中冬令营（冬季体验营／寒假营） <span class="badge b-repost">转载站</span> <span class="badge b-parent">家长分享</span></h3>
+      <p class="meta">与王选并列，被转载的丘成桐少年班介绍称为八十中丘班选拔的<strong>重要途径之一</strong>。它以前称“实验室开放日”。<strong>本次检索未找到八十中官方发布的冬令营简章原文</strong>，下面分开写：转载站能对上的，和只有家长分享的。</p>
+      <div class="table-scroll">
+        <table class="stack">
+          <tbody>
+            <tr><td class="subj">定位</td><td><span class="badge b-repost">转载站</span> 八十中曾发布“拔尖创新人才培养冬季体验营”通知，<strong>针对数学和信息学有特长的优秀朝阳区 4、5、6 年级及初一学生</strong>进行选拔，与丘成桐少年班（朝阳区首个“丘班”，2024 年 11 月授牌）的数理拔尖定位一致</td></tr>
+            <tr><td class="subj">时间（家长分享）</td><td><span class="badge b-parent">家长分享</span> <strong>12 月中旬在八十中官网报名、12 月 31 日截止；1 月中旬开营，为期 4 天</strong>（有文章称年前 1 月 12 日开营，分高低营）；面向五、六年级，分两期，约 200 人，设 S、A、L 班型，首日上 AI、数学等特色课程</td></tr>
+            <tr><td class="subj">4 天做什么（家长分享）</td><td>前三天上文化课（物理常识、数学、英语），数学以校内内容为主，穿插九连环、汉诺塔等益智游戏和比赛；<strong>最后一天考试：上午数学、下午物理</strong></td></tr>
+            <tr><td class="subj">后续（家长分享）</td><td><strong>3 月第二轮</strong>：学校短信通知，到白家庄校区领邀请函，再去望京校区参加一天考试，涉及奥数、语文和学习新知识的能力</td></tr>
+            <tr><td class="subj">表现好会怎样</td><td><span class="badge b-parent">家长分享 · 未经官方证实</span> 说法是学校用 4 天观察学习能力和习惯、择优录取；对六年级，冬令营被说成进入八十中实验班的重要途径，“通过冬令营录取的都是实验班”；五年级也有机会但不多，多轮后只留十几人。<strong>以上均无官方文件证实</strong>，且与第 01 节所述官方禁令（严禁以冬夏令营等形式提前招生、选拔）存在张力，只能当家长圈经验看</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tbl-cap">来源：北京高考在线 gaokzx.com 朝阳区拔尖创新人才培养整理、搜狐转载汇总；营内细节（班型、人数、4 天安排、第二轮）来自此前家长分享汇总，无官方原文。日常准备与王选同向：<strong>数学（重点）＋信息学思维＋物理常识兴趣</strong>，不需要为冬令营单独报班刷题。</p>
+    </div>
+
+    <div class="sel-block">
+      <h3>朝阳外国语学校 · 人大附中朝阳分校 <span class="badge b-guess">检索结论：无单独选拔可考</span></h3>
+      <p class="meta">这两所是四校盯防的另外两所，但备考方式和北中、八十中完全不同：<strong>本次检索未找到它们有小五班、王选、冬令营这类面向小学的单独提前选拔，也就没有“考什么”可练。</strong></p>
+      <div class="unknown">
+        <p><strong>朝阳外国语学校：</strong>在安贞学区内（学区四所中学之一），对你们家是派位／划片线上的学校。能查到的公开信息主要是招生、开放日类通知，没有可核实的特色选拔题型或简历要求。准备方式就是校内成绩与派位流程本身，不需要额外题型训练。</p>
+        <p><strong>人大附中朝阳分校：</strong>公开检索中与它混在一起的多数是<strong>人大附中朝阳学校</strong>（另一所学校）的开放日与招生信息，两校名称极易混淆；针对“人朝分”本身，未找到面向朝阳区小学生的单独选拔活动说明。后续盯防报告会写清说的是哪一所，不把两校消息混报。</p>
+        <p>所以这两所学校在计划里的动作只有两个：<strong>① 随四校周查盯开放日／招生通知，有开放日就去看；② 六年级按当年派位与划片流程走。</strong>如果以后查到新的特色活动，会先更新盯防、再补这一节。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. 三科练到什么水平 ============ -->
+  <section class="sec" id="subjects">
+    <div class="sec-head">
+      <div class="no">03</div>
+      <h2>三科，日常练到什么水平</h2>
+      <p class="lede">按你定的顺序排：<strong>数学是重点，英语按她的真实水平走 FCE 路线，语文给具体要读、要写的内容</strong>。把 2024 年小五班回忆题反推成日常目标——这不是官方难度定级，是<span class="badge b-guess">推断</span>；课标要求是<span class="badge b-official">官方</span>底线，人人要达到，拔高部分量力而行。</p>
+    </div>
+    <div class="subj-grid">
+      <div class="subj-card">
+        <h3>数学 · 重点</h3>
+        <p class="verdict">课内为底，奥数式设问 — 先按这个顺序学</p>
+        <ul>
+          <li><strong>总判断</strong>：涉及“奥数思维”，不是奥数竞赛卷。题目以课内知识为底（三角形、数对、圆面积、周长），设问是奥数式的——最优拼法、阴影割补、互质对角线、多条件优化。<span class="badge b-guess">推断</span> 相当于“课内优秀生 ＋ 系统练过行程、几何、数论初步、逻辑推理的拓展水平”。小五班、王选、冬令营三条线都指向数学，所以时间优先给数学。</li>
+          <li><strong>从现在开始的先后顺序（不要五线并进）：</strong>① 计算与课内扎实（四则、运算律、分数小数）→ ② 行程 → ③ 几何 → ④ 应用建模与优化 → ⑤ 数论初步与逻辑组合。每学完一类，再进下一类；错题复盘跟在每类后面。</li>
+          <li><strong>行程</strong>：相遇追及结合、速度差与速度和——课内行程的多过程拓展。四下先学概念，五上学综合。</li>
+          <li><strong>几何</strong>：立体图形展开、24 个正方形拼图求最短周长、沙漏模型阴影面积、钱币与圆的面积——重在割补、拼合、最优拼法。</li>
+          <li><strong>数论初步</strong>：互质长宽长方形的对角线穿格数，属奥数经典模型（与最大公约数相关），课内不教，放到五下再学，不提前抢跑。</li>
+          <li><strong>逻辑推理与优化 / 生活建模</strong>：小区停车、三旅行团购票省钱——多条件、需列表枚举或设未知数；这也是王选说的“临场问题解决”的日常练法：先拆条件、列表／画图、再尝试。</li>
+          <li><strong>没证据的模块</strong>：2024 年回忆中未出现整除、同余、排列组合、容斥、数列、抽屉原理等。只能说“那年没出现”，不能说“不考”，更不要为它们提前报班。</li>
+        </ul>
+      </div>
+      <div class="subj-card">
+        <h3>英语 · 已过 PET，走 FCE</h3>
+        <p class="verdict">起点：已通过 PET（B1）— 小升初英语已绰绰有余</p>
+        <ul>
+          <li><strong>起点</strong>：四年级已通过 PET（B1）。对照小五班：英语只考 15 分钟 2 篇 30–50 词作文，现在的写作能力已远超这个要求——<strong>小升初这条线上，英语不用再额外加练</strong>，保持手感即可。</li>
+          <li><strong>新目标：约一年后（约 2027 年 11 月，五年级上）考 FCE（B2 First）</strong>。<span class="badge b-official">官方</span> 剑桥 B2 First 共 4 卷：阅读与英语运用 75 分钟（占 40%）、写作 80 分钟、听力约 40 分钟、口语约 14 分钟（双人）。通过线为剑桥量表 <strong>160 分（Grade C）</strong>，173–179 为 Grade B，180–190 为 Grade A（C1）。</li>
+          <li><strong>和 PET 的三个真差距（备考就补这三处）：</strong>① 多了“英语运用”——完形填空、词形变化、改写句等语法词汇题，PET 没有；② 写作从 PET 的 2 篇各约 100 词，升到 <strong>2 篇各 140–190 词</strong>（必写议论文 ＋ 书信／报告／评论／故事自选）；③ 阅读篇幅、听力语速和口语的<strong>双人合作讨论</strong>都上一个台阶。</li>
+          <li><strong>词汇</strong>：PET 约 3000–3500 词（约数，见第 05 节）；FCE <span class="badge b-official">官方</span> 明确<strong>没有官方词汇表</strong>，家长圈常说的“约 4500–5000 词”只是约数，不要当成背完即过的清单——靠阅读和写作中用词来扩，比背表有效。</li>
+          <li><strong>定位不变</strong>：FCE 和 PET 一样，<strong>不能作为小升初招生依据</strong>（官方禁令，见页首）。它的价值在能力本身：考过之后初中英语会轻松很多，也可作为王选简历里的真实背景经历。不要为了赶 FCE 挤占数学时间——顺序仍是数学第一。</li>
+        </ul>
+      </div>
+      <div class="subj-card">
+        <h3>语文 · 给你具体内容</h3>
+        <p class="verdict">区分度在写作，不在刷题 — 读这些、写这几类</p>
+        <ul>
+          <li><strong>2024 年记录中没有传统阅读理解</strong>：初试、复试都是纯作文，未出现字词、拼音、默写、阅读选择或简答题。不能据此断言以后也不考阅读，只能说那一届的区分度放在写作上。所以语文时间主要花在<strong>整本书阅读 ＋ 三类写作</strong>，不刷阅读题海。</li>
+          <li><strong>具体读什么（按学期细表在第 04 节）：</strong>四下先读完《西游记》（青少版起步，再读原著选段）、《稻草人》《爱的教育》《中国民间故事》；五年级配合教材“走近中国古典名著”单元（《草船借箭》《景阳冈》《猴王出世》《红楼春趣》分别出自《三国演义》《水浒传》《西游记》《红楼梦》<span class="badge b-official">官方 · 教材</span>），把四大名著的青少版／选段读通，能做人物图谱、复述情节、说清人物性格。</li>
+          <li><strong>名著阅读是硬门槛</strong>：初试第一题写名著角色的“遗憾与启发”，转载站点评“没看过名著的孩子第一个肯定写不出来”。每读完一本，留一页记录：主要人物、关键情节、一个“遗憾＋启发”。</li>
+          <li><strong>具体写哪三类：</strong>① 人物类——“人物＋遗憾＋启发”；② 想象类——“糖不止有甜味”式通感想象；③ 思辨类——选句写感受（≥300 字，引用＋阐发）和现实议题（删朋友圈类，≥200 字，观点＋理由＋例子），都练题目自拟。</li>
+          <li><strong>速度是关键</strong>：30–45 分钟内写完两篇，审题和落笔速度比文采更先卡人，五上起每周 1 篇必须限时。</li>
+          <li><span class="badge b-official">官方</span> 课标锚点：第二学段（3–4 年级）课外阅读总量不少于 40 万字、背诵优秀诗文 50 篇（段）；第三学段（5–6 年级）不少于 100 万字、背诵 60 篇（段）、默读一般读物每分钟不少于 300 字。古诗文背诵按这个进度走，不另加量。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. 按学期过程计划 ============ -->
+  <section class="sec" id="plan">
+    <div class="sec-head">
+      <div class="no">04</div>
+      <h2>按学期的过程计划</h2>
+      <p class="lede">从<strong>现在（四年级上，2026 年 11 月）</strong>到六年级下学期，逐学期列：课标底线（<span class="badge b-official">官方</span>）、要练完的题型模块（<span class="badge b-repost">家长圈经验</span>）、每周建议量。每学期都按<strong>数学 → 英语 → 语文</strong>的顺序排，时间也按这个顺序优先。建议量是规划建议，不是官方规定，请按孩子校内负担、睡眠和兴趣调整。时间窗口均为往年规律推算，以当年通知为准。</p>
+    </div>
+
+    <div class="sem-tabs" role="tablist" aria-label="选择学期">
+      <button role="tab" aria-selected="true" data-sem="s1">四年级下<small>2027.2–6 · 数学打底＋FCE 起步</small></button>
+      <button role="tab" aria-selected="false" data-sem="s2">五年级上<small>2027.9–12 · FCE 考试＋嘉年华／小五班窗口</small></button>
+      <button role="tab" aria-selected="false" data-sem="s3">五年级下<small>2028.2–6 · 数学进阶＋小五班／冬令营衔接</small></button>
+      <button role="tab" aria-selected="false" data-sem="s4">六年级上<small>2028.9–12 · 王选＋冬令营关键窗口</small></button>
+      <button role="tab" aria-selected="false" data-sem="s5">六年级下<small>2029.1–6 · 冬令营关键场＋回归派位</small></button>
+    </div>
+
+    <div class="sem-panel active" id="panel-s1" role="tabpanel">
+      <p class="focus"><b>本学期核心：</b>数学打底排第一：先把计算和行程、几何初步学完；英语从 PET 出发，正式进入 FCE 的“英语运用”和长写作；语文读完《西游记》，阅读量先达标。<b>现在到四下开学前（2026.11–2027.2）先做三件事：</b>数学计算正确率与错题复盘习惯、英语保持 PET 手感并开始 FCE 词形／完形入门、语文开始《西游记》青少版。</p>
+      <div class="sem-row">
+        <h4>数学 · 重点，先学</h4>
+        <p class="rowline"><b>课标底线：</b>数与运算（万以上数、两三位数乘除、运算律、小数分数加减初步）、图形认识与测量（线段 / 角、平行四边形 / 三角形、面积）、探索规律。</p>
+        <p class="rowline"><b>按顺序练完：</b>① 计算与运算律（正确率优先）；② 行程初步（速度＝路程÷时间、相遇 / 追及概念）；③ 三角形与平面图形周长 / 面积、数对与位置；④ 逻辑推理入门（列表、排除、简单统筹 / 优化）。</p>
+        <p class="amount">每周建议：课内作业外拓展练习每周 3 次、每次 20–30 分钟（多于其他科）；错题每周复盘 1 次。</p>
+      </div>
+      <div class="sem-row">
+        <h4>英语 · PET → FCE 起步</h4>
+        <p class="rowline"><b>她的底线已远超课标：</b>课标一级（3–4 年级）只要求借助图片理解词汇、课外阅读累计 1500–2000 词；她已达 PET B1，本学期不再重复低水平练习。</p>
+        <p class="rowline"><b>要练到：</b>① 英语运用入门——完形填空、词形变化每周各练 1 组，先熟悉 FCE 题型；② 写作从 PET 的约 100 词向 <strong>140 词</strong>过渡，先练议论文结构（观点—理由—例子—结论）；③ 阅读篇幅拉长，听力保持每天接触。</p>
+        <p class="amount">每周建议：阅读／听力每天 20 分钟；写作每周 1 篇（先求结构完整）；英语运用每周 2 次、每次 20 分钟。</p>
+      </div>
+      <div class="sem-row">
+        <h4>语文 · 读这些</h4>
+        <p class="rowline"><b>课标底线：</b>第二学段课外阅读总量不少于 40 万字（3–4 年级累计）；背诵优秀诗文 50 篇（段）；课内习作每学年 16 次左右；阅读整本书，初步理解主要内容，主动分享感受。</p>
+        <p class="rowline"><b>具体内容：</b>整本书读完《西游记》（青少版起步，再挑“猴王出世”等章节读原著选段）、《稻草人》《爱的教育》《中国民间故事》；每本留一页人物＋情节＋“遗憾／启发”记录；习作能把内容写清楚，尝试写“遗憾 / 启发”类感受段落（200 字左右起）。</p>
+        <p class="amount">每周建议：阅读每天 20–30 分钟；习作每周 1 篇；背诵每周 1–2 首 / 段。</p>
+      </div>
+      <div class="sem-row">
+        <h4>认知 / 科创</h4>
+        <p class="rowline"><b>要练到：</b>图形规律启蒙——行 / 列找规律、数量增减、旋转对称；实物折纸，先动手再想象；科学兴趣从动手小实验、观察记录开始。</p>
+        <p class="amount">每周建议：图形推理每周 2 次、每次 15 分钟；折纸 / 实验每周 1 次。</p>
+      </div>
+    </div>
+
+    <div class="sem-panel" id="panel-s2" role="tabpanel">
+      <p class="focus"><b>本学期核心：</b><strong>FCE 考试学期（目标约 2027 年 11 月，以剑桥考点当年日期为准）</strong>＋科学嘉年华（往年在 11 月）＋往年小五班窗口（2024 年为 12 月，2023 年为次年 2–3 月）＋<strong>学期末 2028 年 1 月先参加一次八十中冬令营</strong>（五年级试水，熟悉 4 天流程；报名在 2027 年 12 月，盯防已含在周查内）。数学不因 FCE 停摆，继续行程与几何综合；三科都进入<strong>限时训练</strong>。</p>
+      <div class="sem-row">
+        <h4>数学 · 重点</h4>
+        <p class="rowline"><b>课标底线：</b>第三学段——倍数 / 因数、分数小数运算、三角形三边 / 内角和、圆与圆周率、平面图形面积、数对与位置、统计图表。</p>
+        <p class="rowline"><b>重点练（对标 2024 年初试＋复试）：</b>① 行程综合——相遇追及、速度和 / 差；② 几何综合——立体展开、拼图最短周长、阴影面积割补、圆面积；③ 优化与应用——停车 / 购票类多条件优化、列表枚举；④ 逻辑推理综合。</p>
+        <p class="amount">每周建议：拓展练习每周 3 次、每次 30 分钟；每月 1 次限时模拟（30 分钟做初试风格题、45 分钟做复试风格题，题量不求多，重在审题与速度）。</p>
+      </div>
+      <div class="sem-row">
+        <h4>英语 · FCE 冲刺与考试</h4>
+        <p class="rowline"><b>目标：</b>总分达到 <strong>160（B2 通过）</strong>以上；不把目标定在单科满分，五项（阅读、英语运用、写作、听力、口语）平均分决定总分，没有单科及格线（剑桥计分方式，见来源）。</p>
+        <p class="rowline"><b>重点练：</b>① 写作 2 篇各 <strong>140–190 词</strong>能在 80 分钟内完成（议论文必写 ＋ 自选体裁各练 2 篇以上）；② 英语运用四类题（完形、词形、改写、开放填空）限时成组练；③ 口语双人讨论——练“邀请搭档、回应、一起做决定”，不只背独白；④ 考前做 2–3 次全套模考。小五班的 30–50 词短写作对她只是热身，不单独占时间。</p>
+        <p class="amount">每周建议（考前 2 个月）：写作每周 2 篇、英语运用每周 2 组、听力／阅读每天 20–30 分钟、口语每周 2 次。考完即降回保持量，把时间还给数学。</p>
+      </div>
+      <div class="sem-row">
+        <h4>语文</h4>
+        <p class="rowline"><b>课标底线：</b>进入第三学段——课外阅读总量不少于 100 万字（5–6 年级累计）；背诵 60 篇（段）；默读一般读物每分钟不少于 300 字；能写简单记实 / 想象作文，内容具体、感情真实；阅读整本书，把握主要内容，积极推荐并说明理由。</p>
+        <p class="rowline"><b>具体内容与重点练（对标 2024 年小五班）：</b>开始读《三国演义》《水浒传》青少版／选段；① 名著人物写作——“人物＋遗憾＋启发”；② 想象作文——“糖不止有甜味”类通感 / 想象；③ 议论短文——选句写感受 ≥300 字、现实议题（朋友圈 / 手机）≥200 字，题目自拟、观点明确、有理由。</p>
+        <p class="amount">每周建议：习作每周 1–2 篇，其中 1 篇限时 30 分钟内完成 300 字左右；阅读每天 30 分钟，名著每周有固定进度。</p>
+      </div>
+      <div class="sem-row">
+        <h4>认知 / 科创</h4>
+        <p class="rowline"><b>本学期动作：</b>科学嘉年华按当年通知报名参加（对象为四至七年级）；图形推理每周 2–3 次，瞬时记忆闪卡每周 2 次（图形闪现 1 秒后复述位置与内容，逐步增加数量），折纸实物每周 1 次（对折 1–3 次打孔，先预测再展开验证）。</p>
+        <p class="amount">嘉年华当月可适当增加图形推理频率，但不刷所谓真题——公开渠道没有真题，训练目标是底层认知：找规律时要能口头说出规律，而不只是选答案。</p>
+      </div>
+    </div>
+
+    <div class="sem-panel" id="panel-s3" role="tabpanel">
+      <p class="focus"><b>本学期核心：</b>衔接学期：跟进冬令营 <strong>3 月第二轮</strong>（家长分享，短信通知制）和小五班后续（往年时间不一，以通知为准）；数学补上数论初步和组合推理；FCE 已考完，英语转入保持；科创按兴趣选<strong>一项</strong>白名单赛事做出真实作品。</p>
+      <div class="sem-row">
+        <h4>数学 · 重点</h4>
+        <p class="rowline"><b>课标底线：</b>同第三学段。</p>
+        <p class="rowline"><b>练完模块：</b>① 数论初步——互质、因数 / 倍数综合、理解对角线穿格类问题；② 组合推理——拼图最优、方案枚举；③ 应用建模——经济类（购票 / 停车）多条件题；④ 几何——圆与组合图形面积。冬令营的数学以校内为主，这一学期的课内扎实度同样重要。</p>
+        <p class="amount">每周建议：拓展每周 3 次、每次 30 分钟；错题本每月整理一次。</p>
+      </div>
+      <div class="sem-row">
+        <h4>英语 · FCE 后保持</h4>
+        <p class="rowline"><b>要练到：</b>FCE 考后不再刷题冲分，转为<strong>保持 B2</strong>：英文阅读与听力不断线，写作保持 140–190 词的手感（每月 2 篇即可）；能用英文讲清一个中国故事梗概——这同时对小五班英语题材有用。</p>
+        <p class="amount">每周建议：听读每天 20 分钟；写作每月 2 篇；口语每周 1 次。若 FCE 延期到本学期，则按五上冲刺量执行，考完再降量。</p>
+      </div>
+      <div class="sem-row">
+        <h4>语文</h4>
+        <p class="rowline"><b>课标底线：</b>同第三学段。本学期教材有“走近中国古典名著”单元，课内会学《草船借箭》《景阳冈》《猴王出世》《红楼春趣》。</p>
+        <p class="rowline"><b>具体内容：</b>配合课内，把《三国演义》《水浒传》《西游记》《红楼梦》青少版／选段读通，做四本书的人物图谱；整本书推荐——能向同学推荐一本书并说明理由；议论短文能做到观点＋1–2 个理由＋例子；习作速度提升，300 字在 30 分钟内完成。冬令营第二轮（家长分享）涉及语文，靠的就是这份积累，不临时补。</p>
+        <p class="amount">每周建议：习作每周 1–2 篇；阅读每天 30 分钟。</p>
+      </div>
+      <div class="sem-row">
+        <h4>认知 / 科创</h4>
+        <p class="rowline"><b>要练到：</b>白名单竞赛按兴趣参加 <strong>1 项</strong>即可（如全国青少年人工智能创新挑战赛小学高年级组、世界机器人大会青少年机器人设计与信息素养大赛），重在真实作品与过程记录，不追求多报；编程启蒙——Scratch / Python 基础逻辑（顺序 / 循环 / 条件）。</p>
+        <p class="amount">每周建议：竞赛准备与课内平衡，每周不超过 2–3 小时；编程每周 1–2 次、每次 30–45 分钟。</p>
+      </div>
+    </div>
+
+    <div class="sem-panel" id="panel-s4" role="tabpanel">
+      <p class="focus"><b>本学期核心：</b>王选窗口（往年 12 月前后，10 月 15 日起盯防已加密到每天一次）＋科学嘉年华六年级场次＋<strong>12 月冬令营报名</strong>（2029 年 1 月关键场，盯防 12 月 1 日起每天一次）。数学转向<strong>临场问题解决</strong>，科创把已有经历梳理成真实的项目说明。</p>
+      <div class="sem-row">
+        <h4>数学 · 重点</h4>
+        <p class="rowline"><b>课标底线：</b>同第三学段，迎接毕业复习。</p>
+        <p class="rowline"><b>要练到：</b>数学思维综合——行程、几何、数论初步、优化、逻辑推理混合限时训练；<strong>临场问题解决</strong>：面对没见过的题型，先拆解条件、列表 / 画图、再尝试，而不是套模板（对标王选“临场问题解决”导向）。冬令营考前保持校内数学与物理常识兴趣阅读，不突击。</p>
+        <p class="amount">每周建议：拓展每周 3 次、每次 30–40 分钟；每月 1 次综合限时练习。</p>
+      </div>
+      <div class="sem-row">
+        <h4>英语</h4>
+        <p class="rowline"><b>要练到：</b>保持 B2 水平即可：阅读、听力不断线；短写作恢复手感——小五班式 30–50 词限时短文偶尔练一次（对她是降维练习）；能用英文讲中国故事梗概、介绍图书馆 / 校园生活。</p>
+        <p class="amount">每周建议：听读每天 20 分钟；写作每周 1 次；口语每周 1 次。</p>
+      </div>
+      <div class="sem-row">
+        <h4>语文</h4>
+        <p class="rowline"><b>课标底线：</b>同第三学段（毕业学段）。</p>
+        <p class="rowline"><b>要练到：</b>议论与记叙并重——能就现实议题写 200–300 字观点文；名著与整本书积累能用作写作论据；四大名著人物与情节张口能说，为冬令营第二轮的语文与“学习新知识”环节打底。</p>
+        <p class="amount">每周建议：习作每周 1 篇限时；阅读保持每天 30 分钟。</p>
+      </div>
+      <div class="sem-row">
+        <h4>认知 / 科创</h4>
+        <p class="rowline"><b>本学期动作：</b>王选按当年通知报名（一般 12 月前后，线上答题＋邮箱简历 wangxuan@bj80.com）；冬令营 12 月按官网通知报名；梳理已有项目经历——编程作品、科创小项目、科学实验记录（含 PET／FCE 等真实经历），形成<strong>真实的项目说明</strong>（问题—过程—结果—反思），不编造；科学嘉年华六年级场次再参加一次。</p>
+        <p class="amount">王选当月：数学＋信息学思维练习每周 3 次；项目梳理每周 1 次。</p>
+      </div>
+    </div>
+
+    <div class="sem-panel" id="panel-s5" role="tabpanel">
+      <p class="focus"><b>本学期核心：</b><strong>2029 年 1 月冬令营关键场</strong>（六年级，按家长分享，表现与实验班的关联最强，但未经官方证实）＋冬令营 3 月第二轮（家长分享）；之后回归校内、准备派位，不再新开拓展模块，不再突击考证。</p>
+      <div class="sem-row">
+        <h4>数学 / 英语 / 语文</h4>
+        <p class="rowline">冬令营前保持状态：数学以校内＋已学模块复盘为主，物理常识保持兴趣阅读；其余时间以校内毕业复习为主，巩固课标要求，保持阅读与习作习惯；错题复盘、查漏补缺。</p>
+      </div>
+      <div class="sem-row">
+        <h4>认知 / 科创 / 竞赛</h4>
+        <p class="rowline"><strong>不再突击考证或报新竞赛</strong>；按朝阳区当年义务教育入学工作意见与派位流程，准备志愿与材料；关注区教委、市教委当年发布的正式入学时间表。</p>
+      </div>
+      <div class="sem-row">
+        <h4>心理</h4>
+        <p class="rowline">保持睡眠与运动；向孩子讲清派位是官方入学方式，选拔活动只是成长经历之一，避免把单次结果和自我价值挂钩。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. 证书与竞赛 ============ -->
+  <section class="sec" id="certs">
+    <div class="sec-head">
+      <div class="no">05</div>
+      <h2>证书与竞赛，到底怎么看</h2>
+      <p class="lede"><span class="badge b-official">官方</span> 教育部 2025—2028 年白名单共 47 项，其中<strong>面向学段含“小学”的有 32 项</strong>。白名单只规定学段、不规定具体年级，各赛事当年的组别以主办方当年通知为准。白名单竞赛坚持公益性，<strong>不得向学生、学校收取任何费用</strong>——凡收费的“白名单”培训或办证，都不在官方认可范围内。</p>
+    </div>
+
+    <div class="wl-group">
+      <h3>自然科学素养类 · 小学可参加 12 项</h3>
+      <p class="g-note">和三条选拔线最相关的是信息学 / 编程入口与机器人、无人机方向，见表后说明。</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>竞赛名称</th><th>主办方</th></tr></thead>
+        <tbody>
+          <tr><td>全国青少年人工智能创新挑战赛</td><td>中国少年儿童发展服务中心</td></tr>
+          <tr><td>世界机器人大会青少年机器人设计与信息素养大赛</td><td>中国电子学会</td></tr>
+          <tr><td>全国青少年无人机大赛</td><td>中国航空学会</td></tr>
+          <tr><td>宋庆龄少年儿童发明奖</td><td>中国宋庆龄基金会、中国发明协会</td></tr>
+          <tr><td>全国中学生水科技发明比赛暨斯德哥尔摩青少年水奖中国区选拔赛</td><td>生态环境部宣传教育中心、水利部宣传教育中心</td></tr>
+          <tr><td>全国青少年航天创新大赛</td><td>中国航天科技国际交流中心</td></tr>
+          <tr><td>全球发明大会（中国）竞赛活动</td><td>中国友好和平发展基金会</td></tr>
+          <tr><td>全国青少年人工智能大赛</td><td>中国福利会、中国妇女发展基金会</td></tr>
+          <tr><td>全国青少年科学实验能力大赛</td><td>中国教育装备行业协会</td></tr>
+          <tr><td>全国青少年科学探究建模能力大赛</td><td>北京师范大学</td></tr>
+          <tr><td>全国青少年心理成长知识与应用创新大赛</td><td>中国心理卫生协会</td></tr>
+          <tr><td>全国青少年安全与应急科普创新大赛</td><td>中国灾害防御协会</td></tr>
+        </tbody>
+      </table></div>
+      <p class="tbl-cap">注：科学探究建模能力大赛在 2025 年 9 月公示版中为“普通高中”，在 2025 年 10 月正式公布版及北师大通知中已扩大为小学、初中、普通高中、中职，本表以正式版为准。</p>
+      <div class="plain-note">
+        <p><strong>信息学 / 编程入口要认清：</strong>全国中学生信息学奥林匹克竞赛（NOI）在白名单中<strong>仅面向普通高中，小学不能参加</strong>。小学段的入口是<strong>全国青少年人工智能创新挑战赛</strong>（含编程创作与信息学专项赛，小学分低年级 1–3 年级、高年级 4–6 年级；2026 年第九届报名 5 月 6—31 日、选拔赛 6 月 5 日—7 月 5 日、全国决赛 8 月中旬，官网 aiic.china61.org.cn，以当年通知为准）和<strong>世界机器人大会青少年机器人设计与信息素养大赛</strong>。</p>
+        <p><strong>已被移出白名单、不要再当白名单赛事的：</strong>全国中小学信息技术创新与实践大赛（NOC）、蓝桥杯全国软件和信息技术专业人才大赛、“北斗杯”全国青少年空天科技体验与创新大赛、全国青少年科技教育成果展示大赛、全国青年科普创新实验暨作品大赛等，均已不在 2025—2028 名单中；全国青少年音乐素养大赛亦已移出。</p>
+      </div>
+    </div>
+
+    <div class="wl-group">
+      <h3>人文综合素养类 · 小学可参加 7 项</h3>
+      <div class="table-scroll"><table>
+        <thead><tr><th>竞赛名称</th><th>主办方</th></tr></thead>
+        <tbody>
+          <tr><td>全国青少年禁毒知识竞赛</td><td>中国禁毒基金会</td></tr>
+          <tr><td>“美丽中国”全国版图知识竞赛（中小学组）</td><td>自然资源部宣传教育中心</td></tr>
+          <tr><td>全国青少年劳动技能与智能设计大赛</td><td>中国自动化学会</td></tr>
+          <tr><td>中华诗词美育大赛</td><td>中华诗词学会</td></tr>
+          <tr><td>全国青少年红色文化传承与实践创新大赛</td><td>中国红色文化研究会</td></tr>
+          <tr><td>“讲好中国故事”全国中小学语言素养大赛</td><td>中国教育电视协会</td></tr>
+          <tr><td>同颂中华·全国青少年志愿文学创作与诵读大赛</td><td>中国青年报社</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="wl-group">
+      <h3>艺术体育类 · 小学可参加 13 项</h3>
+      <div class="table-scroll"><table>
+        <thead><tr><th>竞赛名称</th><th>主办方</th></tr></thead>
+        <tbody>
+          <tr><td>全国中小学生绘画书法作品比赛</td><td>中国儿童中心</td></tr>
+          <tr><td>“我爱祖国海疆”全国青少年航海模型教育竞赛</td><td>中国航海模型运动协会</td></tr>
+          <tr><td>“驾驭未来”全国青少年车辆模型教育竞赛</td><td>中国车辆模型运动协会</td></tr>
+          <tr><td>全国青少年模拟飞行锦标赛</td><td>国家体育总局航空无线电模型运动管理中心</td></tr>
+          <tr><td>“飞向北京·飞向太空”全国青少年航空航天模型教育竞赛活动</td><td>中国航空运动协会</td></tr>
+          <tr><td>全国青少年传统体育项目比赛</td><td>中国青少年宫协会</td></tr>
+          <tr><td>“希望颂”——全国青少年书画艺术大展</td><td>中国国际书画艺术研究会</td></tr>
+          <tr><td>全国中小学生海洋文化创意设计大赛</td><td>中国海洋发展基金会、中国海洋大学、自然资源部北海局</td></tr>
+          <tr><td>全国青少年国防素养大赛</td><td>南京理工大学</td></tr>
+          <tr><td>“戏剧中国”全国青少年戏剧文化艺术大赛</td><td>中国戏剧文学学会</td></tr>
+          <tr><td>全国青少年人工智能辅助生成数字艺术创作者大赛</td><td>文化和旅游部艺术发展中心</td></tr>
+          <tr><td>学校美育助力行动——青少年视觉艺术传承与创新工作坊展示</td><td>中国艺术教育促进会</td></tr>
+          <tr><td>“常青藤”全国青少年校园戏剧创意大赛</td><td>中央戏剧学院</td></tr>
+        </tbody>
+      </table></div>
+      <p class="tbl-cap">其余 15 项（五大学科奥赛、天文、地理、地球科学奥赛、青少年科技创新大赛高中组、丘成桐中学科学奖、世界华人学生作文大赛高中组、外研社杯高中组等）小学不能参加，不再逐列。</p>
+    </div>
+
+    <h3 style="margin:28px 0 10px;">英语证书：KET / PET / FCE 怎么定位（她已过 PET，下一步 FCE）</h3>
+    <div class="table-scroll"><table>
+      <tbody>
+        <tr><td class="subj">是什么</td><td><span class="badge b-official">官方</span> 剑桥通用英语五级考试前两级：KET＝A2 Key，PET＝B1 Preliminary；另有 for Schools 校园版，水平相同、证书同等效力，成绩终身有效。考试分阅读与写作、听力、口语三部分。在中国可报考（剑桥官网考试日期页列有 PET 等）。</td></tr>
+        <tr><td class="subj">词汇量</td><td><strong>约数，各家不统一</strong>：KET 约 1500–1800 词，PET 约 3000–3500 词（第三方对剑桥官方词表的计数，剑桥官网未直接给出总词汇量数字）。对照课标：二级（5–6 年级）约 500 词、三级（7–9 年级）约 1600 词——即 KET 约等于初中毕业水平、PET 约等于高中毕业水平（媒体转述的对照，非课标原文）。</td></tr>
+        <tr><td class="subj">写作要求</td><td>KET：25 词以上邮件 / 短讯 ＋ 35 词以上看图故事；PET：2 篇各约 100 词（邮件 ＋ 文章 / 故事二选一）。这条从 25–35 词到 100 词的进阶，是很清晰的<strong>能力标尺</strong>，比证书本身更有用。</td></tr>
+        <tr><td class="subj">英语起点</td><td><strong>已通过 PET（B1）</strong>，2026 年四年级取得。这个水平说明 PET 这一级已经学透，下一步不需要再刷 PET，直接按 FCE 准备。</td></tr>
+        <tr><td class="subj">FCE（B2 First）</td><td><span class="badge b-official">官方</span> 剑桥 B2 First：4 卷——阅读与英语运用 75 分钟（40%）、写作 80 分钟（2 篇各 <strong>140–190 词</strong>：必写议论文 ＋ 自选一题）、听力约 40 分钟、口语约 14 分钟（双人，含合作讨论）。总分按五项平均计入剑桥量表，<strong>160 起为 B2 通过（Grade C），173–179 Grade B，180–190 Grade A</strong>；无单科及格线。B2 级别<strong>没有官方词汇表</strong>，“约 4500–5000 词”是家长圈约数。目标时间约 2027 年 11 月，具体考试日期、考点与费用以当年剑桥考点公布为准，本页不预填。</td></tr>
+        <tr><td class="subj">官方态度</td><td><span class="badge b-official">官方</span> 先分清：<strong>PETS（全国英语等级考试）不面向义务教育阶段学生</strong>，教育部 2007 年文件明确各地考点不得受理义务教育阶段学生报名（KET/PET 是剑桥考试，与 PETS 是两个考试，不要混淆）。对 KET/PET：新京报、界面新闻调查报道称<strong>没有任何政策明确规定考取 KET/PET 可为升学增加筹码</strong>；记者从朝阳区、通州区多所中学了解到，<strong>现在小升初不会看孩子是否具备 KET、PET 证书</strong>；北京市教委对采访函未回复。也有业内人士称“提前招生的学校还是会看”。两种说法并存，前者是向中学求证的结果，后者是业内 / 家长圈说法，均非官方文件。</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tbl-cap"><strong>结论：</strong>KET/PET/FCE 当作英语能力自测和学习目标可以，当作小升初录取凭证不行；是否在某个非正式选拔中被“参考”，无官方文件可证实。她考 FCE 的理由是能力进阶，不是升学加分，不要为它挤占数学时间。</p>
+
+    <div class="callout danger">
+      <h3>明确不能作为招生依据的（官方明文，不是家长圈说法）</h3>
+      <p>① <strong>各类竞赛证书、竞赛成绩</strong>——白名单结果同样不得作为中小学招生依据和高考加分；② <strong>各类考级证明</strong>——含 PETS 等公共考试成绩、英语 / 乐器 / 美术考级；③ <strong>培训成绩 / 培训证明</strong>；④ <strong>考试成绩</strong>（义务教育免试就近入学）；⑤ <strong>荣誉证书</strong>；⑥ <strong>简历、面试、评测</strong>本身——市教委 2026 年意见明令严禁以这些形式选拔学生。</p>
+      <p style="margin-bottom:0;">需要说明的张力：上述禁令与小五班、王选、嘉年华机考等实际存在的活动在形式上存在冲突。本页不作价值判断，只呈现两方面的来源——禁令是官方文件，活动细节是转载站的家长分享。参与时请知晓政策风险，以学校 / 区教委当年的正式通知为准。</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. 每周对照 ============ -->
+  <section class="sec" id="weekly">
+    <div class="sec-head">
+      <div class="no">06</div>
+      <h2>每周对照清单</h2>
+      <p class="lede">把学期计划落到每周。不用全做到，下面是调研给出的建议节奏：过程项每周至少完成大半，比集中突击更重要。</p>
+    </div>
+    <ul class="week-list">
+      <li><b>数学（先看这一项）</b>课内作业全对率、拓展练习（按当前模块：行程／几何／数论／建模）、错题复盘——每周复盘一次，比多做一套题更重要；拓展次数多于其他任何一科。</li>
+      <li><b>英语（FCE 路线）</b>听读每天不断线；四下–五上按 FCE 走：写作每周 1–2 篇（向 140–190 词进阶）、英语运用每周 2 组；FCE 考后降为保持量。词汇在阅读和写作中用，不只背单词表。</li>
+      <li><b>语文</b>阅读打卡、习作 1–2 篇、背诵、名著进度（当前书目见第 04 节对应学期）——四项中每周至少完成三项；每读完一本留一页人物＋情节＋“遗憾／启发”。</li>
+      <li><b>认知</b>图形推理、瞬时记忆、折纸——每周各 1–2 次、每次 15 分钟，贵在持续。</li>
+      <li><b>科创</b>每学期有 1 个真实的小项目 / 小实验记录（问题—过程—结果—反思），比一堆证书更有说服力。</li>
+      <li><b>认知训练的依据与限度</b>心理学研究显示，记忆刷新训练（每天 20–30 分钟、一周 5 天、连续 4 周）可提升儿童工作记忆与图形推理成绩——但研究结论不等于嘉年华机考的提分保证，训练要适度、避免疲劳，四年级以准确率优先、再提速度。</li>
+      <li class="redline"><b>红线</b>不购买所谓“小五班 / 王选 / 嘉年华真题、保过班、保奖”产品；不参加收费的“白名单”培训；不为简历编造经历；保持睡眠与运动。</li>
+    </ul>
+  </section>
+
+  <!-- ============ 6. 还没查清的 ============ -->
+  <section class="sec" id="unknown">
+    <div class="sec-head">
+      <div class="no">07</div>
+      <h2>还没查清的，明确标在这里</h2>
+      <p class="lede">以下问题本次调研用公开渠道查不到可靠答案。任何人给出这些问题的“确定答案”，都要多问一句来源。</p>
+    </div>
+    <ol class="open-q">
+      <li><b>小五班 2023 年、2025 年具体考题：未找到。</b>2023 年仅有时间线；2025 年标题文章正文仍为 2024 年内容。不要用 2024 年题型替代其他年份。</li>
+      <li><b>小五班分数线、通过率、录取人数：未找到可信数据。</b>“约 300 人”“80 人”“年级前 10% 有机会”等均为网传说法，互相冲突。</li>
+      <li><b>小五班 2029 届是否还办、时间与范围：不确定。</b>“将被科学教育中心代替”是网传，无官方佐证；2025 参考名单中的学校不等于 2029 年仍在范围内。</li>
+      <li><b>王选线上答题的具体科目、题型、题量、分值、时长：未找到。</b>只有“科技创新和信息学导向、临场问题解决能力”的方向性描述。</li>
+      <li><b>王选简历官方看重清单：未找到。</b>无官方简历要求或评价标准；任何“必备证书清单”均为家长圈 / 培训机构说法。</li>
+      <li><b>嘉年华机考除“数形规律约 70 题”外的题量、分值、难度排序：未找到。</b>四部分描述仅来自一家转载站的家长分享，无官方试卷或说明。</li>
+      <li><b>嘉年华“逾 8000 人参与”：未核实。</b>仅见于搜狐自媒体，无官方数字佐证。</li>
+      <li><b>冬令营官方简章、确切年级与名额：未找到。</b>“面向 4–6 年级及初一”来自转载站对冬季体验营通知的转述；“五六年级、约 200 人、S/A/L 班型、4 天安排、3 月第二轮、录取即实验班”均来自家长分享，无官方原文。2028、2029 年是否照旧举办，以当年八十中通知为准。</li>
+      <li><b>八十中夏令营／暑期活动的往年规律：未核实。</b>未找到稳定的报名月份与形式记录；2028 年 5 月的加密盯防是为了不漏通知，不代表届时一定有夏令营。</li>
+      <li><b>朝外、人朝分是否有未公开的特色选拔：无法证实“没有”，只能说公开渠道未找到。</b>本页按“无单独选拔”规划；若后续出现新活动，先更新盯防再改规划。</li>
+      <li><b>FCE 在 2027 年的具体考试日期、北京考点与费用：须以当年剑桥公布为准。</b>本页只按官方考试结构与 160 分通过线规划，不预填日期和费用；“约一年后”是你们定的目标时间，不是已报名的考试。</li>
+      <li><b>KET/PET/FCE 在具体选拔中是否被“参考”：无官方文件可证实。</b>媒体向中学求证的结果是“小升初不会看”，业内人士说法相反，两者并存，无法裁定。</li>
+      <li><b>白名单各赛事的小学段具体年级分组、报名方式、时间：须以当年主办方通知为准。</b>本页所引 2026 年第九届人工智能创新挑战赛时间是当年的通知，不是 2029 届时间。</li>
+      <li><b>核实方式的缺口：</b>本次调研中北京小升初网直达、八十中官网打开均未成功，关键转载事实来自搜索索引而非原文核对。报名季请直接访问学校官网、区教委官网核实当年通知。</li>
+    </ol>
+  </section>
+
+  <!-- ============ 来源 ============ -->
+  <section class="sec sources" id="sources">
+    <div class="sec-head">
+      <div class="no">08</div>
+      <h2 style="font-size:22px;">来源</h2>
+      <p class="lede" style="font-size:14px;">调研时间 2026-11-07，补订 2026-11-08（FCE 结构据剑桥官网，冬令营据转载站检索）。官方文件优先；转载站与家长分享均已在正文标注可信度。</p>
+    </div>
+    <h3>政策与白名单（官方）</h3>
+    <ul>
+      <li>教育部 2025—2028 学年竞赛活动通知（教监管厅函〔2025〕7 号）：<a href="https://hudong.moe.gov.cn/srcsite/A29/202510/t20251029_1418393.html">hudong.moe.gov.cn/srcsite/A29/202510/t20251029_1418393.html</a></li>
+      <li>北京市教委 2026 年义务教育阶段入学工作意见：<a href="https://www.beijing.gov.cn/zhengce/zhengcefagui/202604/t20260417_4589381.html">beijing.gov.cn/zhengce/zhengcefagui/202604/t20260417_4589381.html</a></li>
+      <li>朝阳区 2026 年义务教育阶段入学工作意见：<a href="https://www.beijing.gov.cn/zhengce/zhengcefagui/202604/t20260430_4625423.html">beijing.gov.cn/zhengce/zhengcefagui/202604/t20260430_4625423.html</a></li>
+      <li>教育部 2023 年招生入学通知（不得以证书作为依据）：<a href="https://qspfw.moe.gov.cn/html/hotnews/20230523/20499.html">qspfw.moe.gov.cn/html/hotnews/20230523/20499.html</a></li>
+      <li>PETS 不面向义务教育阶段学生（教基厅函〔2007〕31 号）：<a href="http://www.moe.gov.cn/srcsite/A06/s3321/200704/t20070428_81817.html">moe.gov.cn/srcsite/A06/s3321/200704/t20070428_81817.html</a></li>
+      <li>义务教育课程方案和课程标准（2022 年版）：<a href="http://www.moe.gov.cn/srcsite/a26/s8001/202204/t20220420_619921.html">moe.gov.cn/srcsite/a26/s8001/202204/t20220420_619921.html</a></li>
+    </ul>
+    <h3>小五班（转载站）</h3>
+    <ul>
+      <li>2024 年初试 / 复试内容：<a href="https://www.xschu.com/zhengcezixun/77326.html">xschu.com/zhengcezixun/77326.html</a>；<a href="https://www.zizzs.com/gk/zhongkao/183576.html">zizzs.com/gk/zhongkao/183576.html</a></li>
+      <li>2025 年选拔范围 33 所名单：<a href="https://www.xschu.com/zhengcezixun/77329.html">xschu.com/zhengcezixun/77329.html</a></li>
+      <li>时间线与规模：<a href="https://www.zhongkaobj.cn/zhongkao/zixun/202502089077.html">zhongkaobj.cn/zhongkao/zixun/202502089077.html</a></li>
+      <li>“网传小五班没有”一行字出处：<a href="https://www.xschu.com/zhengcezixun/82142.html">xschu.com/zhengcezixun/82142.html</a></li>
+    </ul>
+    <h3>王选（转载站）</h3>
+    <ul>
+      <li>开放报名（线上答题＋邮箱简历）：<a href="https://www.xschu.com/zhengcezixun/82622.html">xschu.com/zhengcezixun/82622.html</a></li>
+      <li>报名入口与邮箱：<a href="https://www.xschu.com/zhengcezixun/82629.html">xschu.com/zhengcezixun/82629.html</a></li>
+      <li>丘成桐少年班介绍（考察导向）：<a href="https://www.gaokzx.com/gk/zhongkao/133974.html">gaokzx.com/gk/zhongkao/133974.html</a></li>
+      <li>高中班型（数学与信息科学融合）：<a href="https://www.xschu.com/zhengcezixun/82427.html">xschu.com/zhengcezixun/82427.html</a></li>
+    </ul>
+    <h3>科学嘉年华（转载站 / 家长分享）</h3>
+    <ul>
+      <li>科学教育中心落户北京中学：<a href="https://www.xschu.com/zhengcezixun/82051.html">xschu.com/zhengcezixun/82051.html</a></li>
+      <li>2025 年活动通知（四至七年级、免费）：<a href="https://www.xschu.com/zhengcezixun/83452.html">xschu.com/zhengcezixun/83452.html</a></li>
+      <li>机考四部分详情：<a href="https://www.xschu.com/zhengcezixun/83649.html">xschu.com/zhengcezixun/83649.html</a></li>
+      <li>校内科学嘉年华（朝阳区政府网）：<a href="http://www.bjchy.gov.cn/slh/bmdt/4028805a9637b7a80196385efc410700.html">bjchy.gov.cn/slh/bmdt/4028805a9637b7a80196385efc410700.html</a></li>
+    </ul>
+    <h3>冬令营（转载站）</h3>
+    <ul>
+      <li>朝阳区拔尖创新人才培养整理（冬季体验营面向 4–6 年级及初一、数学与信息学特长）：<a href="https://www.gaokzx.com/gk/jianzhang/132395.html">gaokzx.com/gk/jianzhang/132395.html</a></li>
+      <li>拔尖人才政策盘点（冬季体验营通知转述）：<a href="https://www.sohu.com/a/751964346_120714950">sohu.com/a/751964346_120714950</a></li>
+      <li>八十中丘成桐少年班授牌（朝阳区政府网）：<a href="http://www.bjchy.gov.cn/slh/bmdt/4028805a942547490194255bd4e70044.html">bjchy.gov.cn/slh/bmdt/4028805a942547490194255bd4e70044.html</a></li>
+      <li>营内 4 天安排、班型、第二轮与“实验班”说法：此前对话中汇总的家长分享，无单一官方原文链接，已在正文标为家长分享。</li>
+    </ul>
+    <h3>KET / PET / FCE（官方 / 主流媒体）</h3>
+    <ul>
+      <li>剑桥英语青少年系列考试：<a href="https://www.cambridgeenglish.cn/consultancy/cambridge-english-for-schools/">cambridgeenglish.cn/consultancy/cambridge-english-for-schools/</a></li>
+      <li>B2 First（FCE）考试结构（剑桥官网）：<a href="https://www.cambridgeenglish.org/exams-and-tests/qualifications/first/format/?skill=grammar,listening,pronunciation,reading,vocabulary,writing&level=independent">cambridgeenglish.org/exams-and-tests/qualifications/first/format/</a></li>
+      <li>B2 First 教师手册（写作 140–190 词、无官方词汇表等，剑桥官网 PDF）：<a href="https://www.cambridgeenglish.org/images/167791-b2-first-handbook.pdf">cambridgeenglish.org/images/167791-b2-first-handbook.pdf</a></li>
+      <li>新京报调查（中学称小升初不看 KET/PET）：<a href="https://m.bjnews.com.cn/detail/160256947015202.html">m.bjnews.com.cn/detail/160256947015202.html</a></li>
+      <li>界面新闻调查：<a href="https://www.jiemian.com/article/3390292_yidian.html">jiemian.com/article/3390292_yidian.html</a></li>
+      <li>第九届全国青少年人工智能创新挑战赛通知：<a href="https://www.xschu.com/zhengcezixun/87268.html">xschu.com/zhengcezixun/87268.html</a></li>
+      <li>英语已通过 PET（B1）：家庭提供，非公开来源。</li>
+    </ul>
+    <h3>语文书目（官方 · 教材）</h3>
+    <ul>
+      <li>统编教材五年级下册第二单元“走近中国古典名著”（《草船借箭》《猴王出世》《景阳冈》《红楼春趣》出处，人教社）：<a href="https://www.pep.com.cn/bks/xxyw/jzjd/202505/W020250531378946237770.pdf">pep.com.cn/bks/xxyw/jzjd/202505/W020250531378946237770.pdf</a></li>
+    </ul>
+    <h3>盯防安排</h3>
+    <ul>
+      <li>第 01 节的周查节奏（周一约 09:40）、各加密日期（2027-10-20、2028-10-15、2028-12-01、2028 年 5 月）与“盯到 2029 年 9 月”：为本对话中已设立的定期检查安排，非外部来源；微信公众号无法实时监控的局限亦在该节说明。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>本页基于 2026-11-07 的公开调研整理，2026-11-08 按家庭提供的英语水平与 FCE 目标、数学优先顺序补订：官方文件为政策底线；小五班、王选、科学嘉年华、冬令营的细节均来自转载站与家长分享，无官方试卷或简章佐证，请按文中标注的可信度使用。2029 届的具体时间、范围与形式，以当年学校和区教委的正式通知为准。</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.sem-tabs button[data-sem]');
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.setAttribute('aria-selected','false'); });
+      btn.setAttribute('aria-selected','true');
+      document.querySelectorAll('.sem-panel').forEach(function(p){ p.classList.remove('active'); });
+      var panel = document.getElementById('panel-' + btn.getAttribute('data-sem'));
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>
