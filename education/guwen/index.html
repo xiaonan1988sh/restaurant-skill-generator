@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>古文怎么学最好 · 教育理论与研究综述</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+
+      :root {
+        --bg: #f7f5f1;
+        --surface: #fffdf9;
+        --surface-2: #efece4;
+        --ink: #23201b;
+        --ink-soft: #4a453c;
+        --muted: #7a7365;
+        --line: #ddd6c8;
+        --accent: #a8341f;        /* 朱砂 */
+        --accent-soft: #f3e2da;
+        --teal: #2e5f56;          /* 黛绿 */
+        --teal-soft: #dde8e3;
+        --gold: #8a6d2f;
+        --gold-soft: #efe6cf;
+        --shadow: 0 1px 2px rgba(35,32,27,.05), 0 8px 28px rgba(35,32,27,.06);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #171512;
+          --surface: #201d19;
+          --surface-2: #29251f;
+          --ink: #ece7db;
+          --ink-soft: #c9c2b2;
+          --muted: #9a927f;
+          --line: #3a352c;
+          --accent: #e07a5c;
+          --accent-soft: #3d2721;
+          --teal: #7fb8a9;
+          --teal-soft: #24332e;
+          --gold: #cfa860;
+          --gold-soft: #33291a;
+          --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+        }
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+        font-size: 17px;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      .sans { font-family: "Noto Sans SC", "PingFang SC", sans-serif; }
+
+      /* ---------- layout ---------- */
+      .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+      .layout { display: grid; grid-template-columns: 208px minmax(0, 1fr); gap: 44px; align-items: start; }
+      @media (max-width: 900px) { .layout { grid-template-columns: 1fr; gap: 0; } }
+
+      nav.toc {
+        position: sticky; top: 24px;
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: 13.5px; line-height: 1.5;
+        padding: 18px 0 24px;
+      }
+      nav.toc .toc-title { font-size: 12px; letter-spacing: .18em; color: var(--muted); margin-bottom: 10px; }
+      nav.toc a {
+        display: block; padding: 7px 10px; min-height: 36px;
+        color: var(--ink-soft); text-decoration: none;
+        border-left: 2px solid var(--line);
+      }
+      nav.toc a:hover { color: var(--accent); }
+      nav.toc a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 700; }
+      @media (max-width: 900px) {
+        nav.toc { position: static; padding: 14px 0 4px; }
+        nav.toc .toc-title { display: none; }
+        nav.toc .toc-links { display: flex; flex-wrap: wrap; gap: 8px; }
+        nav.toc a {
+          border: 1px solid var(--line); border-radius: 999px;
+          padding: 6px 14px; background: var(--surface);
+          display: inline-flex; align-items: center;
+        }
+        nav.toc a.active { border-color: var(--accent); }
+      }
+
+      main { padding-bottom: 40px; min-width: 0; }
+      section { padding: 34px 0 8px; scroll-margin-top: 20px; }
+      section + section { border-top: 1px solid var(--line); margin-top: 26px; }
+
+      /* ---------- hero ---------- */
+      .hero { position: relative; padding: 52px 0 30px; overflow: hidden; }
+      .hero .vertical {
+        position: absolute; right: 6px; top: 30px;
+        writing-mode: vertical-rl;
+        font-size: 15px; letter-spacing: .55em; color: var(--muted);
+        user-select: none;
+      }
+      @media (max-width: 640px) { .hero .vertical { display: none; } }
+      .hero .dateline {
+        font-family: "Noto Sans SC", sans-serif; font-size: 13px; color: var(--muted);
+        letter-spacing: .08em; margin-bottom: 18px;
+      }
+      h1 {
+        font-size: clamp(30px, 5.4vw, 46px); font-weight: 900; line-height: 1.3;
+        margin: 0 0 16px; letter-spacing: .01em;
+      }
+      h1 .q { color: var(--accent); }
+      .hero .lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--ink-soft); max-width: 46em; margin: 0 0 26px; }
+      .hero .lead strong { color: var(--ink); }
+
+      .verdict {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+        box-shadow: var(--shadow); padding: 22px 24px;
+      }
+      .verdict h2 { font-size: 15px; margin: 0 0 12px; font-family: "Noto Sans SC", sans-serif; letter-spacing: .12em; color: var(--accent); }
+      .verdict p { margin: 0 0 14px; font-size: 16.5px; }
+      .verdict p:last-child { margin-bottom: 0; }
+      .conf { display: grid; gap: 10px; margin-top: 16px; }
+      .conf-row { display: grid; grid-template-columns: 190px 1fr 74px; gap: 12px; align-items: center; font-family: "Noto Sans SC", sans-serif; font-size: 13.5px; }
+      .conf-row .bar { height: 8px; background: var(--surface-2); border-radius: 99px; overflow: hidden; }
+      .conf-row .bar i { display: block; height: 100%; border-radius: 99px; }
+      .conf-row .lvl { text-align: right; font-weight: 700; }
+      @media (max-width: 560px) {
+        .conf-row { grid-template-columns: 1fr 64px; }
+        .conf-row .bar { grid-column: 1 / -1; order: 3; }
+      }
+
+      /* ---------- headings & text ---------- */
+      .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+      .sec-num {
+        font-family: "Noto Sans SC", sans-serif; font-weight: 700; font-size: 13px;
+        color: var(--accent); letter-spacing: .1em; white-space: nowrap;
+      }
+      h2.sec-title { font-size: clamp(23px, 3.6vw, 29px); font-weight: 900; line-height: 1.4; margin: 0; }
+      .sec-sub { color: var(--muted); font-size: 15px; margin: 4px 0 18px; }
+      h3 { font-size: 19px; font-weight: 700; margin: 26px 0 8px; }
+      p { margin: 0 0 14px; }
+      ul, ol { margin: 0 0 16px; padding-left: 1.4em; }
+      li { margin-bottom: 7px; }
+      li::marker { color: var(--accent); }
+      strong { font-weight: 700; }
+      .small { font-size: 14.5px; color: var(--ink-soft); }
+      .muted { color: var(--muted); }
+
+      blockquote {
+        margin: 18px 0; padding: 14px 20px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+        font-size: 17.5px;
+      }
+      blockquote .who { display: block; margin-top: 8px; font-size: 13.5px; color: var(--muted); font-family: "Noto Sans SC", sans-serif; }
+      .pull {
+        font-size: clamp(20px, 3.4vw, 25px); font-weight: 700; line-height: 1.6;
+        margin: 22px 0; padding-left: 18px; border-left: 3px solid var(--accent);
+      }
+
+      .tag {
+        display: inline-block; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 700;
+        padding: 2px 9px; border-radius: 999px; vertical-align: 2px; white-space: nowrap;
+      }
+      .tag-verified { background: var(--teal-soft); color: var(--teal); }
+      .tag-index { background: var(--gold-soft); color: var(--gold); }
+      .tag-opinion { background: var(--accent-soft); color: var(--accent); }
+
+      a.src { color: var(--teal); text-decoration: none; border-bottom: 1px dotted var(--teal); font-size: .92em; white-space: nowrap; }
+      a.src:hover { border-bottom-style: solid; }
+
+      /* ---------- scholar cards ---------- */
+      .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 6px; }
+      @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+        padding: 18px 20px; box-shadow: var(--shadow);
+      }
+      .card .name { font-size: 18px; font-weight: 900; }
+      .card .role { font-family: "Noto Sans SC", sans-serif; font-size: 12.5px; color: var(--muted); margin: 2px 0 10px; }
+      .card p { font-size: 15.5px; margin-bottom: 10px; }
+      .card p:last-child { margin-bottom: 0; }
+      .card .quote { font-weight: 700; color: var(--ink); }
+
+      /* ---------- spectrum (三派) ---------- */
+      .spectrum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 8px; }
+      @media (max-width: 760px) { .spectrum { grid-template-columns: 1fr; } }
+      .stance { border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px; background: var(--surface); }
+      .stance.mid { border: 2px solid var(--accent); box-shadow: var(--shadow); position: relative; }
+      .stance .badge {
+        position: absolute; top: -11px; right: 14px; background: var(--accent); color: #fff;
+        font-family: "Noto Sans SC", sans-serif; font-size: 11.5px; font-weight: 700;
+        padding: 2px 10px; border-radius: 999px;
+      }
+      .stance h3 { margin: 0 0 4px; font-size: 17.5px; }
+      .stance .who { font-family: "Noto Sans SC", sans-serif; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+      .stance p { font-size: 15px; margin-bottom: 8px; }
+      .stance p:last-child { margin-bottom: 0; }
+      .spectrum-axis {
+        display: flex; justify-content: space-between; font-family: "Noto Sans SC", sans-serif;
+        font-size: 12px; color: var(--muted); margin-top: 4px;
+      }
+
+      /* ---------- tables ---------- */
+      .table-scroll { overflow-x: auto; margin: 16px 0 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+      table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; line-height: 1.65; }
+      th, td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+      thead th { font-family: "Noto Sans SC", sans-serif; font-size: 13px; letter-spacing: .06em; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+      tbody tr:last-child td { border-bottom: none; }
+      td .t-name { font-weight: 700; font-family: "Noto Serif SC", serif; font-size: 15px; }
+      @media (max-width: 700px) {
+        .table-scroll { border: none; background: transparent; overflow: visible; }
+        table, thead, tbody, tr, td { display: block; min-width: 0; width: 100%; }
+        thead { display: none; }
+        tr { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; margin-bottom: 12px; padding: 6px 2px; }
+        td { border-bottom: none; padding: 6px 14px; }
+        td::before {
+          content: attr(data-h); display: block; font-family: "Noto Sans SC", sans-serif;
+          font-size: 11.5px; letter-spacing: .1em; color: var(--muted); margin-bottom: 2px;
+        }
+      }
+
+      /* ---------- do / don't ---------- */
+      .dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 8px; }
+      @media (max-width: 700px) { .dodont { grid-template-columns: 1fr; } }
+      .do, .dont { border-radius: 6px; padding: 20px 22px; border: 1px solid var(--line); }
+      .do { background: var(--teal-soft); }
+      .dont { background: var(--accent-soft); }
+      .do h3, .dont h3 { margin: 0 0 12px; font-size: 18px; }
+      .do h3 { color: var(--teal); } .dont h3 { color: var(--accent); }
+      .do ul, .dont ul { margin: 0; padding-left: 1.2em; font-size: 15.5px; }
+      .do li::marker { color: var(--teal); } .dont li::marker { color: var(--accent); }
+
+      /* ---------- 10-minute flow ---------- */
+      .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0 8px; counter-reset: step; }
+      @media (max-width: 820px) { .flow { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 480px) { .flow { grid-template-columns: 1fr; } }
+      .step { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; position: relative; }
+      .step .n {
+        font-family: "Noto Sans SC", sans-serif; font-weight: 700; font-size: 12px; color: #fff;
+        background: var(--accent); border-radius: 999px; padding: 2px 10px; display: inline-block; margin-bottom: 8px;
+      }
+      .step h4 { margin: 0 0 6px; font-size: 16.5px; font-weight: 700; }
+      .step p { font-size: 14.5px; margin: 0; color: var(--ink-soft); }
+
+      .callout {
+        border: 1px solid var(--line); border-left: 3px solid var(--gold);
+        background: var(--surface); border-radius: 0 6px 6px 0;
+        padding: 16px 20px; margin: 18px 0; font-size: 15.5px;
+      }
+      .callout .c-title { font-family: "Noto Sans SC", sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .1em; color: var(--gold); margin-bottom: 6px; }
+      .callout p:last-child { margin-bottom: 0; }
+
+      /* ---------- sources ---------- */
+      .src-list { font-size: 14.5px; }
+      .src-list li { margin-bottom: 10px; }
+      .src-list a { color: var(--teal); word-break: break-all; }
+      details { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); padding: 4px 20px; margin: 14px 0; }
+      summary { cursor: pointer; font-weight: 700; padding: 12px 0; min-height: 44px; display: flex; align-items: center; }
+      details ul { font-size: 15px; }
+
+      footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 22px 0 46px; font-size: 13.5px; color: var(--muted); font-family: "Noto Sans SC", sans-serif; line-height: 1.7; }
+
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ================= HERO ================= -->
+      <header class="hero">
+        <div class="vertical" aria-hidden="true">熟读成诵 · 粗知大意</div>
+        <div class="dateline">教育理论与研究综述 ｜ 资料检索于 2026 年 11 月 15 日</div>
+        <h1>古文怎么学最好<span class="q">？</span><br />学者和研究给出的答案</h1>
+        <p class="lead">
+          从王尚文的《语感论》、温儒敏的统编教材理念，到二语习得理论和为数不多的实证研究——
+          语文教育界对<strong>方法</strong>的共识相当一致：小学阶段靠<strong>诵读短篇、粗知大意、故事优先</strong>来养语感，
+          语法和逐字翻译押后。但对“提前浸润能让以后考试更轻松”这个<strong>效果</strong>，至今没有一项长期追踪研究能证明。
+          这一页把共识、争议和证据的边界都摊开讲清楚。
+        </p>
+
+        <div class="verdict">
+          <h2>先说结论</h2>
+          <p>
+            <strong>方法上有共识：</strong>对 9–10 岁的孩子，正确的做法是反复诵读简短、能懂、有故事的小古文，
+            先得其大意，边读边聊；实词、虚词、句式和逐字翻译留到初中再系统学。
+            家里“每周 2–3 次、每次约 10 分钟、朗读＋讨论”的轻量浸润，正是这个共识指向的模型。
+          </p>
+          <p>
+            <strong>效果上没证据：</strong>没有任何随机对照或长期追踪研究证明，小学轻量浸润能提高初中或高考的文言文成绩。
+            北京高考文言文考的仍是实词、虚词、句式和翻译——那是初高中必须另做的系统功课。
+            提前浸润的价值应定位为<strong>消除陌生感、攒下熟读的句式、保住兴趣</strong>，而不是“高考预习”。
+          </p>
+          <p>
+            <strong>两个要避开的极端：</strong>一是把小学古文上成逐字翻译＋虚词句式训练（学界称“拔高”）；
+            二是不求理解的纯背诵、定背诵指标（“老实大量纯读经”模式，被多位学者严厉批评）。
+          </p>
+          <div class="conf" aria-label="置信度">
+            <div class="conf-row">
+              <span>“诵读优先、语法押后”这一方法共识</span>
+              <span class="bar"><i style="width:78%;background:var(--teal)"></i></span>
+              <span class="lvl" style="color:var(--teal)">中高</span>
+            </div>
+            <div class="conf-row">
+              <span>“提前浸润能提高日后考试成绩”</span>
+              <span class="bar"><i style="width:22%;background:var(--accent)"></i></span>
+              <span class="lvl" style="color:var(--accent)">低 · 无实证</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="layout">
+        <nav class="toc" aria-label="目录">
+          <div class="toc-title">本页目录</div>
+          <div class="toc-links">
+            <a href="#yugan">01 语感从哪来</a>
+            <a href="#beisong">02 先背还是先懂</a>
+            <a href="#shihou">03 何时开始、学多少</a>
+            <a href="#gushi">04 故事优先，语法押后</a>
+            <a href="#lilun">05 语言学习理论</a>
+            <a href="#shizheng">06 实证研究有多少</a>
+            <a href="#zhengyi">07 学界的争议</a>
+            <a href="#zuofa">08 落到家里的 10 分钟</a>
+            <a href="#gaokao">09 关于高考，实话实说</a>
+            <a href="#laiyuan">10 来源与核实说明</a>
+          </div>
+        </nav>
+
+        <main>
+          <!-- ================= 01 语感 ================= -->
+          <section id="yugan">
+            <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">语感从哪来：先诵读，后语法</h2></div>
+            <p class="sec-sub">几代语文教育学者的共同主张：语感不是讲出来的，是在大量真实的文言句子里“泡”出来的。</p>
+
+            <div class="cards">
+              <div class="card">
+                <div class="name">王尚文</div>
+                <div class="role">《语感论》，上海教育出版社 1995 年（2010 年修订）· 理论著作 <span class="tag tag-index">经二手文献核对</span></div>
+                <p>语感是语文能力的“纲”，其他能力是“目”。它来自学习者在丰富的言语形式中不断同化、顺应的过程——<span class="quote">“离开具体的言语形式，语感也就成了无本之木，无源之水。”</span></p>
+                <p>主张反复诵读、涵泳体味，反对“背景—作者—段落—中心思想”的公式化分析；只有积累了相当数量的言语形式之后，形式语法知识才开始有用。</p>
+                <p class="small">对家里的含义：10 分钟读真句子，胜过 10 分钟讲规则。</p>
+              </div>
+              <div class="card">
+                <div class="name">温儒敏</div>
+                <div class="role">北京大学教授、统编语文教材总主编 · 《温儒敏论语文教育五集》相关论述 <span class="tag tag-verified">已读全文核实</span></div>
+                <p><span class="quote">“加强诵读，把诵读作为学习文言文基本的又是最重要的环节与手段”</span>——以诵读为先、以诵读为主，一堂文言课应有一半以上时间在读。</p>
+                <p>串讲、疏通词句、语法分析、翻译“有其必要，但不能挤掉诵读的位置”；初学不必字字落实，借助注释反复诵读，慢慢会意、得其大意，这种“会意”本身就是方法。诵读也不必是表演，自己投入地读、有感受就好。</p>
+                <p class="small"><a class="src" href="https://www.sohu.com/a/1090475272_232629" target="_blank" rel="noopener">原文（搜狐转载）↗</a></p>
+              </div>
+              <div class="card">
+                <div class="name">钱梦龙</div>
+                <div class="role">《文言文教学改革刍议》，《中学语文教学》1997 年第 4 期 <span class="tag tag-index">经综述文献核对</span></div>
+                <p>他指出文言文教学最大的毛病是<strong>“有‘言’而无‘文’”</strong>——只剩字词，没有文章。反对逐句串讲，主张学生自读、先整体理解，再在语境中把握字词语法，而不是孤立讲解。</p>
+                <p class="small"><a class="src" href="https://www.fx361.com/page/2012/0429/26688849.shtml" target="_blank" rel="noopener">陶瑾 2012 综述 ↗</a></p>
+              </div>
+              <div class="card">
+                <div class="name">王荣生 · 王宁</div>
+                <div class="role">王荣生《文言文教学教什么》（华东师大出版社 2014）；王宁《文言文教学的价值与策略》（《课程·教材·教法》2018 年第 5 期） <span class="tag tag-index">仅见摘要/转引</span></div>
+                <p>王荣生提出文言、文章、文学、文化“一体四面”：文言（字词语法）是基础，文化是最高层——语法不是不要，而是手段，不是全部。王宁强调文言是中华文化不可替代的载体，基础训练“只能也必须从基础教育开始”，但要用精选的优秀作品，而不是整本读经。</p>
+                <p class="small"><a class="src" href="https://www.360doc.cn/article/5315_880303260.html" target="_blank" rel="noopener">王宁文转载 ↗</a></p>
+              </div>
+            </div>
+
+            <p>
+              2026 年发表的一线研究把这条路径概括为<strong>“诵读—悟读—创读”</strong>（徐磊、孙红波，《中华优秀传统文化教学实践研究》2026 年第 4 期，人民教育出版社刊载
+              <span class="tag tag-verified">已读全文核实</span>）：先把读音读准、停顿读对、语势读出来；再借助注释、熟语和语境“悟”意思——不是逐字翻译；最后把故事讲给别人听、迁移到同类篇目。这条三段式，恰好就是家庭版“朗读＋讨论”可以照搬的骨架。
+              <a class="src" href="https://www.pep.com.cn/bks/xxyw/jzjd/202605/W020260513352523206519.pdf" target="_blank" rel="noopener">论文 PDF ↗</a>
+            </p>
+          </section>
+
+          <!-- ================= 02 背诵 ================= -->
+          <section id="beisong">
+            <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">先背还是先懂：三派之争</h2></div>
+            <p class="sec-sub">这是这个领域最核心、至今未完全解决的争论。立场不是两个，而是三个——主流站在中间。</p>
+
+            <div class="spectrum">
+              <div class="stance">
+                <h3>先背下来，以后再懂</h3>
+                <div class="who">王财贵“读经”运动（1994 年起）；清人陆世仪语</div>
+                <p>“先求熟读，慢慢自懂。”理由是 15 岁以前记性强、悟性弱，先把经典装进记忆，日后再慢慢反刍理解。</p>
+                <p class="small">其“每天 20–30 分钟、一年达到高中语文程度”之类的说法是<strong>断言，原文没有给出任何数据</strong>。</p>
+                <p class="small"><a class="src" href="https://www.gdjome.com/html/a4357.html" target="_blank" rel="noopener">《读经通讯》发刊辞 ↗</a></p>
+              </div>
+              <div class="stance mid">
+                <span class="badge">主流共识</span>
+                <h3>粗知大意，背诵是副产品</h3>
+                <div class="who">于永正 · 温儒敏 · 徐磊/孙红波（2026）</div>
+                <p>特级教师于永正的名言：<strong>“小古文怎么学？粗知大意，背下来再说！”</strong>——孩子的兴趣在“读”而不在“讲”，先读、先得大意，背诵在反复读中自然发生。</p>
+                <p class="small">注意：这里的“背下来”是熟读的结果，不是先布置的任务量。</p>
+                <p class="small"><a class="src" href="https://www.360doc.cn/article/3449241_675278196.html" target="_blank" rel="noopener">相关引述 ↗</a></p>
+              </div>
+              <div class="stance">
+                <h3>理解和感受是背诵的前提</h3>
+                <div class="who">柯小刚（同济大学哲学教授）· 叶圣陶论吟诵</div>
+                <p><strong>“背诵并非理解的前提，相反，理解或感受是背诵的前提。有所感受，有所领悟，有所理解，背诵自然而然，也很快。”</strong></p>
+                <p>对“老实大量纯读经”（全日制、封闭、不讲解、包本背诵），柯小刚的批评极为严厉，称其“根本就不是背诵”“是对儿童的残害”，并提到有读经出身的学生成年后对经典产生本能反感。</p>
+                <p class="small"><a class="src" href="https://www.thepaper.cn/newsDetail_forward_1538035?commTag=true" target="_blank" rel="noopener">澎湃新闻问答（已读全文核实）↗</a></p>
+              </div>
+            </div>
+            <div class="spectrum-axis"><span>← 只记不解</span><span>理解与背诵不可分 →</span></div>
+
+            <p>
+              叶圣陶的立场正好跨在中间：他说“学习文言，必须熟读若干篇……要能自然成诵才行”，但他论吟诵时又强调<strong>“只有理解在先，然后才谈得到传出情趣”</strong>，批评旧式吟诵不顾内容。一线教师的反思文章也给出同样的警告：要求先背再讲的课堂，背诵往往效率低、错误多——“在理解的基础上加以背诵”才有效。
+              <span class="tag tag-index">叶圣陶部分经二手文献核对</span>
+              <a class="src" href="https://www.360doc.cn/article/12433823_533159076.html" target="_blank" rel="noopener">相关整理 ↗</a>
+            </p>
+            <div class="pull">给家里的结论：不要求背她还不懂的篇目，也不给每篇定背诵指标。哪一句读着喜欢，就多读几遍，背下来是喜欢和理解的副产品。</div>
+          </section>
+
+          <!-- ================= 03 何时开始 ================= -->
+          <section id="shihou">
+            <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">什么时候开始、一次学多久</h2></div>
+            <p class="sec-sub">课标的定位是“启蒙”二字；四年级正处在教材设定的窗口内，但官方期待只是“初步感知、激发兴趣”。</p>
+
+            <h3>课标与教材：小学阶段本来就只要求“感知”</h3>
+            <p>
+              2022 年版课标对小学第一、二、三学段的文言文<strong>没有提出明确目标要求</strong>，只对第四学段（初中）提出“诵读古诗词，阅读浅易文言文，能借助注释和工具书理解基本内容”。统编教材从三年级《司马光》（全文 30 字）开始，小学六年一共只有 <strong>14 篇</strong>浅易文言文，约占课文总数的 3.6%，其中 12 篇不足 100 字、7 篇不足 50 字。进阶体现在“读”上（停顿→节奏→语势），不在语法上。
+              <span class="tag tag-index">经期刊文章核对</span>
+              <a class="src" href="https://www.fx361.com/page/2024/0823/25289647.shtml" target="_blank" rel="noopener">《小学教学参考》2024 年文章 ↗</a>
+            </p>
+            <p>
+              也就是说：四年级开始接触篇幅型小古文，在<strong>广度</strong>上略超教材，在<strong>深度</strong>上（不学系统语法）和课标完全一致。詹红琳 2025 年的研究提醒小学文言教学有两种定位错误——“矮化”（只讲故事、只背诵，不看语言形式）和“拔高”（提前教中学语法）；家里要避的主要是后者。
+            </p>
+
+            <h3>“记忆黄金期”——流传很广，证据很弱</h3>
+            <p>
+              温儒敏解释小学增加古诗文时说，这个年龄段“记忆力处于黄金时期，多读多背可以打好底子”。这句话和清人陆世仪“十五以前多记性少悟性”的说法一起，被大量文章反复引用。但本次检索中，<strong>没有任何一篇引用了具体的现代心理学实验</strong>——它更像传统经验被套上了心理学的说法。有期刊文章把它与皮亚杰的认知发展阶段对应（具体运算阶段约 7–11 岁，形式运算约 11–12 岁后），这个对应是作者的阐释，不是皮亚杰本人谈过文言文。不过它指向的结论是合理的：<strong>9–10 岁适合具体的故事、人物和情节，抽象的虚词、句式系统在发展上为时过早。</strong>
+            </p>
+
+            <h3>剂量：没有研究给出“处方”</h3>
+            <ul>
+              <li><strong>王财贵：</strong>每天 20–30 分钟——这是全日制读经模式的断言，不是研究结论。</li>
+              <li><strong>柯小刚：</strong>每天抽十几分钟读一段经典即可，“不追求数量、速度，要受用、涵泳”“勿贪多求快”。</li>
+              <li><strong>朱文君的课堂经验：</strong>熟读 30–50 篇小古文后，语感初步形成（经验之谈，非对照研究；按每周 2–3 篇短篇算，大约是一个学年的轻量积累）。</li>
+              <li><strong>通俗共识</strong>（如《声律启蒙》讨论帖的综合意见）：小而高频，每天 10–15 分钟远胜周末突击一小时。<a class="src" href="https://post.smzdm.com/p/a6zdk4ke/" target="_blank" rel="noopener">讨论帖 ↗</a></li>
+            </ul>
+            <p>所以“每周 2–3 次、每次 10 分钟”处在所有说法中最轻的一端——没有任何来源认为这太多，而“短而频胜过长而稀”得到了多方呼应。</p>
+          </section>
+
+          <!-- ================= 04 故事优先 ================= -->
+          <section id="gushi">
+            <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">故事优先，语法押后</h2></div>
+            <p class="sec-sub">这不是家长圈的偏好，而是教材本身的设计——14 篇课文几乎全是寓言、故事和语录。</p>
+
+            <p>
+              《司马光》《杨氏之子》《两小儿辩日》《自相矛盾》《守株待兔》《精卫填海》《铁杵成针》《伯牙鼓琴》……统编教材的小学文言篇目短小、生动、多为孩子已熟悉的故事。徐磊、孙红波（2026）和詹红琳（2025）都强调<strong>情境</strong>（故事、角色扮演、联系生活），反对把活的文章拆成“密码”来破译的“释词—串讲—翻译—背诵”老套路。
+            </p>
+            <p>
+              <strong>朱文君</strong>（“小古文”课程的主要推动者，《小学生小古文一百课》主编）总结：“不管怎么教，都离不开读。”她教《两小儿辩日》用模拟辩论的“辩读”，教《蜀鄙二僧》用三轮读法推进。她的另一个方法对家庭特别实用：<strong>文白对读、文白对写</strong>——把白话译文放在旁边作桥，而不是代替原文；对已经读完《西游记》、白话阅读能力很强的孩子，这座桥正好合用。
+              <span class="tag tag-index">经转载文章核对</span>
+              <a class="src" href="https://www.360doc.cn/article/8750152_355845806.html" target="_blank" rel="noopener">《小古文怎么教》↗</a>
+            </p>
+            <p>
+              <strong>王松舟</strong>则提醒一个反直觉的点：“学生没有兴趣”不是不学的理由——<span class="quote">“学生的兴趣并非教育的起点……培养和塑造学生良好的兴趣才应该作为教育的起点”</span>，课堂实践证明文言的兴趣完全可以被点燃。他同时指出小古文的价值“不在实用，而在文化”。
+              <span class="tag tag-index">经原文页面核对</span>
+              <a class="src" href="https://www.jindyey.com/350292.html" target="_blank" rel="noopener">原文 ↗</a>
+            </p>
+            <div class="callout">
+              <div class="c-title">选篇的顺序（综合各家说法）</div>
+              <p>先从她已知的故事入手（司马光、守株待兔、自相矛盾、精卫填海一类，30–100 字）；再到《世说新语》的机智小品；如果她喜欢志怪，再试《搜神记》《聊斋志异》的短篇。台湾教师蔡思宜（亲子天下，2026）也主张 4–6 年级是衔接的“黄金期”、按兴趣选篇（如爱鬼故事就从志怪入手）——但需注意她身处台湾课纲与会考语境、且来源是付费课程推广，属从业者观点，不是研究证据。</p>
+            </div>
+            <p>
+              系统语法并不会被取消，只是被推迟：2022 年课标把“随文学习基本的词汇、语法知识”明确放在初中，高中课标再要求借助注释和工具书梳理常见实词、虚词和特殊句式。<strong>小学阶段的“押后”，是为了初中阶段的“正式开始”让路，不是永远不学。</strong>
+            </p>
+          </section>
+
+          <!-- ================= 05 理论 ================= -->
+          <section id="lilun">
+            <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">背后的语言学习理论</h2></div>
+            <p class="sec-sub">二语习得理论常被借来解释古文学习——它能提供很好的设计启发，但必须先声明：这只是类比。</p>
+
+            <div class="callout">
+              <div class="c-title">先把边界说清</div>
+              <p>本次检索<strong>没有找到任何一项把克拉申等理论实际用于文言文教学的研究</strong>。而且文言文没有母语者、没有交际用途、没有浸润环境，它并不是克拉申意义上的“第二语言”；考试最终又明确考显性语法知识。所以下面三条只能当作设计家庭活动的启发，不能当作文言文的实证。</p>
+            </div>
+
+            <h3>克拉申“可理解输入”（i+1）</h3>
+            <p>克拉申（1982）主张：语言习得来自理解略高于当前水平、内容有趣、且不按语法顺序编排的大量输入，同时学习者焦虑要低。对应到古文：选她<strong>借助注释和讨论能懂个大概</strong>的短篇（i+1），内容先有趣，气氛别像考试——这正好解释了为什么“短篇＋故事＋不抠字眼”是共识做法。</p>
+
+            <h3>施密特“注意假说”——输入要被“注意到”才算数</h3>
+            <p>施密特（1990）指出，只懂意思、不注意形式，输入不会变成真正的掌握。对应到古文：每篇留<strong>一个</strong>轻量的注意点就够了——比如反复出现的“之”“曰”“者”在这里是什么意思、该在哪里停顿。不用上语法课，但也不能让文字完全“水过地皮湿”。</p>
+
+            <h3>斯温“输出假说”＋朗“互动假说”——讲出来、聊起来</h3>
+            <p>斯温（1985）发现，加拿大浸入式教学的孩子听读接近母语者，但说写语法错误顽固——因为<strong>输出</strong>才逼人把模糊的理解变精确。朗的互动假说则强调，理解卡壳时的协商最能促进学习。对应到古文：<strong>“用自己的话把故事讲一遍”不是装饰，而是把模糊语感变成可用知识的机制</strong>（统编教材 14 篇中有 6 篇明确要求讲故事）；亲子讨论就是互动本身，光听录音要弱得多。</p>
+
+            <h3>“语文核心素养”框架里的位置</h3>
+            <p>2022 年课标的四个维度——语言建构与运用、思维发展与提升、审美鉴赏与创造、文化传承与理解——以语言运用为“一”带动其余“三”。温儒敏 2025 年在《光明日报》撰文指出，古诗文训练的是直觉思维和形象思维/想象力，这正是当下相对欠缺的；他对“背诵古诗文能造芯片吗”的回答是：没有直接用处，但有“无用之大用”。这是<strong>价值判断，不是成绩证据</strong>。
+              <span class="tag tag-verified">已读全文核实</span>
+              <a class="src" href="https://www.Chinanews.com.cn/cul/2025/03-25/10388399.shtml" target="_blank" rel="noopener">中新网转载全文 ↗</a>
+            </p>
+            <p class="small">钱理群没有找到专门论文言文方法的文章；他一贯的立场是人文性的——语文是“立言立人”、为孩子打“精神底子”，反对功利化、机械化、应试化的语文教学，并说过“朗读，用心朗读，是感受文学的一个重要方式”。这与诵读路线方向一致，但不是一套文言方法。<span class="tag tag-index">经二手文献核对</span></p>
+          </section>
+
+          <!-- ================= 06 实证 ================= -->
+          <section id="shizheng">
+            <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">实证研究：其实很少</h2></div>
+            <p class="sec-sub">这是整份综述最需要诚实的部分：这个领域由理论、名师经验和硕士论文主导，受控研究屈指可数。</p>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th style="width:24%">研究</th><th style="width:26%">设计</th><th style="width:26%">发现</th><th style="width:24%">局限</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-h="研究"><span class="t-name">钟明芳 2016</span><br /><span class="muted">台湾硕士论文</span></td>
+                    <td data-h="设计">52 名九年级学生、9 节课，“结构分析＋提问教学”对比传统讲授</td>
+                    <td data-h="发现">实验组在古文阅读理解和测验成绩上优于对照组</td>
+                    <td data-h="局限">初中、台湾、干预很短；仅见摘要</td>
+                  </tr>
+                  <tr>
+                    <td data-h="研究"><span class="t-name">描红研究 2026</span><br /><span class="muted">JoVE Visualize，2026-02-17</span></td>
+                    <td data-h="设计">93 名五年级学生、3 个班，描红 vs 阅读 vs 绘画，只学一首古诗</td>
+                    <td data-h="发现">描红组在记忆上优于阅读组、在理解上优于两组；认知负荷无差异</td>
+                    <td data-h="局限">学的是古诗不是文言散文；单节课；无后续追踪</td>
+                  </tr>
+                  <tr>
+                    <td data-h="研究"><span class="t-name">徐磊、孙红波 2026</span><br /><span class="muted">《中华优秀传统文化教学实践研究》</span></td>
+                    <td data-h="设计">自有班级的课堂观察，无样本量与统计数据</td>
+                    <td data-h="发现">学生从害怕、喊读，变为能注意到句式规律、能有表现力地朗读</td>
+                    <td data-h="局限">个案叙述，无对照组、无量化数据</td>
+                  </tr>
+                  <tr>
+                    <td data-h="研究"><span class="t-name">朱文君“小古文”实践</span><br /><span class="muted">2005 年起，号称千余所学校参与</span></td>
+                    <td data-h="设计">课堂实践经验总结</td>
+                    <td data-h="发现">熟读 30–50 篇小古文后，语感初步形成</td>
+                    <td data-h="局限">未找到公开发表的受控数据；属教师经验</td>
+                  </tr>
+                  <tr>
+                    <td data-h="研究"><span class="t-name">《小学语文教师》论坛 2017</span><br /><span class="muted">“小学古诗文多读多背够了吗”</span></td>
+                    <td data-h="设计">一线教师观点争鸣</td>
+                    <td data-h="发现">意见分裂：一派称诵读是“不二法门”，另一派警告只背不懂会喂出厌学</td>
+                    <td data-h="局限">观点而非研究；仅见摘要</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout">
+              <div class="c-title">最大的证据空白</div>
+              <p>没有找到任何研究检验过“小学每周 2–3 次、每次 10 分钟轻量浸润”这种做法，更没有跟踪到初中、或以高考文言文成绩为结果指标的研究。“熟读 30–50 篇形成语感”“五年级起步的班级接受度高约 30 个百分点”这类数字，都来自教师经验或单个教师的自述（无方法说明、无同行评审），<strong>不能当证据引用</strong>。“提前学能让高考更容易”是一个从语感理论和教材螺旋进阶推出的<strong>合理推测</strong>，不是被证明的效果——这一点要对自己说清楚。</p>
+            </div>
+            <p class="small">
+              来源：钟明芳论文<a class="src" href="https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id=%22104YDU00396039%22.&searchmode=basic" target="_blank" rel="noopener">摘要页 ↗</a>；
+              描红研究<a class="src" href="https://visualize.jove.com/41699894-a-mode-comparison-study-about-the-effect-of-tracing-on-childrens-poem-learning-in-actual-classroom-contexts" target="_blank" rel="noopener">JoVE 页面 ↗</a>。
+              另外常被引用的埃利（Elley）斐济“图书洪流”实验（给孩子故事书而非语法练习，读写反而更好）只在通俗综述中被转引，本次未检索到原文，不作为文言证据使用。
+            </p>
+          </section>
+
+          <!-- ================= 07 争议 ================= -->
+          <section id="zhengyi">
+            <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">学界的争议</h2></div>
+            <p class="sec-sub">共识之外，这些分歧是真实存在的——知道它们在哪，才知道家里的尺度该怎么拿捏。</p>
+
+            <h3>一、背诵派 vs 理解派（核心争论）</h3>
+            <p>见第 02 节。分歧最尖锐的地方其实是<strong>全日制读经学校</strong>，而不是家庭里每天十几分钟——主流立场并不支持背诵长篇、不懂的文本。</p>
+
+            <h3>二、提前学到底有没有用</h3>
+            <ul>
+              <li><strong>支持：</strong>温儒敏（记忆黄金期、“打底子”）、王宁（基础训练必须从基础教育开始）、王松舟（兴趣可以培养、价值在文化）、朱文君（30–50 篇形成语感）。</li>
+              <li><strong>谨慎：</strong>柯小刚（不抢跑、不强迫，幼儿先诗歌音乐，“勿贪多求快”，正常上学＋课余读经典即可）；温儒敏本人也提醒，不要被“不能输在起跑线”的焦虑驱动，“语文要靠慢功夫和长期熏陶”，别把有趣的阅读变成僵硬的任务。</li>
+              <li><strong>《声律启蒙》之争</strong>是同一问题的缩影：批评者说平水韵与普通话不合、它从来不是识字教材、古代“3–8 岁背诵＋8–15 岁系统学”的时间预算现代家庭没有；支持者看重韵律和趣味。讨论的综合结论是：只当“磨耳朵”的优质输入，小剂量、高频率。</li>
+            </ul>
+
+            <h3>三、重“言”还是重“文”</h3>
+            <p>钱梦龙批“有言无文”（只有字词、没有文章），另一极端是只讲故事、完全不看语言。王荣生的“一体四面”和李卫东的“言文统一”都是在消解这个二分：<strong>字词要在文章里学，不能脱离文章，也不能代替文章。</strong></p>
+
+            <h3>四、兴趣是起点，还是培养出来的</h3>
+            <p>王松舟认为兴趣不是起点、而是好教学的产物；不少家长读物则把“没兴趣”当作等待的理由。对一个已经读完《西游记》、阅读兴趣现成的孩子，这个争论基本不适用——任务是把现有的兴趣<strong>迁移</strong>过去，而不是制造它。</p>
+          </section>
+
+          <!-- ================= 08 做法 ================= -->
+          <section id="zuofa">
+            <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">落到家里：10 分钟怎么做</h2></div>
+            <p class="sec-sub">把上面的共识拼起来，“每周 2–3 次、朗读＋讨论”的计划本身就是学界指向的模型。下面是保持它在共识之内的具体做法。</p>
+
+            <div class="flow">
+              <div class="step">
+                <span class="n">约 3 分钟</span>
+                <h4>先听/读出声</h4>
+                <p>先听一遍好的范读（教师或音频），再由她读 2–3 遍，只管读音、停顿和语势——温儒敏主张一半以上时间花在诵读上。</p>
+              </div>
+              <div class="step">
+                <span class="n">约 4 分钟</span>
+                <h4>用自己的话讲故事</h4>
+                <p>合上书，用白话把故事讲一遍：谁？发生了什么？为什么好笑/机智？问一两个“为什么”，不搞成小测验。这一步同时是理解检查和“输出”。</p>
+              </div>
+              <div class="step">
+                <span class="n">约 2 分钟</span>
+                <h4>留一个注意点</h4>
+                <p>每篇只点一个反复出现的字或句式，如“之”“曰”“者”，或一处停顿规律。点到为止，不展开成语法课。</p>
+              </div>
+              <div class="step">
+                <span class="n">约 1 分钟</span>
+                <h4>再读一遍收尾</h4>
+                <p>带着理解再读一遍，在还觉得好玩时停下。哪句她特别喜欢，之后几天顺手重读——背诵就这样自然发生。</p>
+              </div>
+            </div>
+
+            <div class="dodont">
+              <div class="do">
+                <h3>这样做 ✓</h3>
+                <ul>
+                  <li>选 30–100 字的短篇，先熟悉的故事，再《世说新语》小品、志怪短篇，按她的兴趣走</li>
+                  <li>文白对读：白话版放在旁边当桥，不代替原文</li>
+                  <li>短而频：10 分钟、每周 2–3 次，好玩时就停</li>
+                  <li>允许跳读、猜读，不打断故事去抠每个字（温儒敏谈读《西游记》时也是这个态度）</li>
+                  <li>以朱文君的经验为参照：熟读 30–50 篇是语感初步形成的量级参照，不是承诺</li>
+                </ul>
+              </div>
+              <div class="dont">
+                <h3>别这样 ✕</h3>
+                <ul>
+                  <li>系统教虚词、句式，或要求背 18 个虚词、100 个实词（那是初中的事）</li>
+                  <li>要求逐字精准翻译、“字字落实”</li>
+                  <li>一上来就整本读《论语》《道德经》《古文观止》——各家一致认为这最容易喂出厌学</li>
+                  <li>不求理解的纯背诵，或给每篇定背诵指标</li>
+                  <li>把它变成考试、表演或“起跑线”工程；若连续两周明显抵触，暂停，换成音频、动画或换一篇故事再试</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= 09 高考 ================= -->
+          <section id="gaokao">
+            <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">关于高考，实话实说</h2></div>
+            <p>
+              按 2026 年北京高考语文的公开解析，文言文部分为 <strong>5 道题</strong>、题型稳定，考的是实词的语境意义、虚词的意义用法、词句理解、文意整合推断和人物特征梳理评价，解析明确说它导向教学“重视文言知识的积累、梳理和建构”——也就是说，<strong>将来那场考试要的系统功课，一样都不会少</strong>。
+              <span class="tag tag-index">经新闻解析核对</span>
+              <a class="src" href="https://news.qq.com/rain/a/20260608A08HWK00" target="_blank" rel="noopener">腾讯新闻解析 ↗</a>
+              <span class="small muted">（该解析未给出文言部分的单独分值，本页不引用具体分数。）</span>
+            </p>
+            <p>
+              所以对小学阶段这件事，最准确的说法是：它大概率能<strong>降低将来面对文言文时的心理门槛</strong>，给孩子攒下一批熟读的句式和词义印象，让初中的系统学习有个可以依托的底子。但没有任何来源能量化“高考会因此容易多少”。把它当作“去陌生感＋养语感”来做，预期就不会落空；把它当作“高考预习”来做，则迟早会忍不住加码到语法和背诵指标上——而那恰恰是所有来源共同警告的方向。
+            </p>
+          </section>
+
+          <!-- ================= 10 来源 ================= -->
+          <section id="laiyuan">
+            <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">来源与核实说明</h2></div>
+            <p class="sec-sub">标注规则：<span class="tag tag-verified">已读全文核实</span> 表示检索时打开并通读了原文；<span class="tag tag-index">仅见摘要/转引</span> 表示只看到摘要、二手转述或转载，未能核对全文——引用时请按这个区别看待。</p>
+
+            <h3>学术与专业文献</h3>
+            <ul class="src-list">
+              <li>徐磊、孙红波：《诵读 悟读 创读：指向文化传承的小学文言文教学路径》，《中华优秀传统文化教学实践研究》2026 年第 4 期 <span class="tag tag-verified">已读全文核实</span><br /><a href="https://www.pep.com.cn/bks/xxyw/jzjd/202605/W020260513352523206519.pdf" target="_blank" rel="noopener">pep.com.cn 论文 PDF</a></li>
+              <li>王尚文：《语感论》，上海教育出版社 1995 年（2010 年修订）<span class="tag tag-index">经二手文献核对</span><br /><a href="https://www.fx361.com/page/2017/0519/1785758.shtml" target="_blank" rel="noopener">fx361 相关综述</a></li>
+              <li>王荣生：《文言文教学教什么》，华东师范大学出版社 2014 年；王宁：《文言文教学的价值与策略》，《课程·教材·教法》2018 年第 5 期 <span class="tag tag-index">仅见摘要/转引（CNKI 付费墙）</span><br /><a href="https://www.360doc.cn/article/5315_880303260.html" target="_blank" rel="noopener">王宁文转载（360doc）</a></li>
+              <li>钱梦龙：《文言文教学改革刍议》，《中学语文教学》1997 年第 4 期 <span class="tag tag-index">经陶瑾 2012 综述核对</span><br /><a href="https://www.fx361.com/page/2012/0429/26688849.shtml" target="_blank" rel="noopener">fx361 综述</a></li>
+              <li>詹红琳：《“小学启航·情境赋能”——新课标背景下小学文言文情境教学的实践研究》，《教育科学理论研究》2025 年第 1 卷第 6 期 <span class="tag tag-index">仅见索引</span></li>
+              <li>钟明芳：《古文结构提问教学法对国中国文学习成就影响之研究》，台湾硕士论文 2016 年 <span class="tag tag-index">仅见摘要</span><br /><a href="https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id=%22104YDU00396039%22.&searchmode=basic" target="_blank" rel="noopener">台湾博硕士论文网摘要页</a></li>
+              <li>描红与古诗学习对照研究，JoVE Visualize 2026-02-17 <span class="tag tag-index">仅见索引</span><br /><a href="https://visualize.jove.com/41699894-a-mode-comparison-study-about-the-effect-of-tracing-on-childrens-poem-learning-in-actual-classroom-contexts" target="_blank" rel="noopener">JoVE 页面</a></li>
+              <li>《以启代蒙：按照教科书的要求教学浅易文言文》，《小学教学参考（语文）》2024 年第 8 期（2022 课标与 14 篇篇目数据来源）<span class="tag tag-index">经转载核对</span><br /><a href="https://www.fx361.com/page/2024/0823/25289647.shtml" target="_blank" rel="noopener">fx361 转载</a></li>
+            </ul>
+
+            <h3>专家观点与教育媒体（非实证）</h3>
+            <ul class="src-list">
+              <li>温儒敏论诵读与文言文教学（《温儒敏论语文教育五集》相关讨论，搜狐 2026-10-21）<span class="tag tag-verified">已读全文核实</span><br /><a href="https://www.sohu.com/a/1090475272_232629" target="_blank" rel="noopener">sohu.com/a/1090475272_232629</a></li>
+              <li>温儒敏：《不能用来造“芯片”，为何还要背诵古诗文？》，《光明日报》2025-03-25 <span class="tag tag-verified">已读全文核实</span><br /><a href="https://www.Chinanews.com.cn/cul/2025/03-25/10388399.shtml" target="_blank" rel="noopener">中新网转载</a></li>
+              <li>柯小刚：澎湃新闻“问吧”精选（论读经），2016-10-15 <span class="tag tag-verified">已读全文核实</span><br /><a href="https://www.thepaper.cn/newsDetail_forward_1538035?commTag=true" target="_blank" rel="noopener">thepaper.cn</a></li>
+              <li>王财贵：《读经通讯》发刊辞，1994 年 <span class="tag tag-index">其本人中心网站</span><br /><a href="https://www.gdjome.com/html/a4357.html" target="_blank" rel="noopener">gdjome.com</a></li>
+              <li>王松舟：《不在实用而在文化——漫议小古文课程的当代使命》<span class="tag tag-index">经原文页面核对</span><br /><a href="https://www.jindyey.com/350292.html" target="_blank" rel="noopener">jindyey.com</a></li>
+              <li>朱文君：《小古文怎么教》；于永正“粗知大意，背下来再说”相关引述 <span class="tag tag-index">经转载核对</span><br /><a href="https://www.360doc.cn/article/8750152_355845806.html" target="_blank" rel="noopener">朱文君文（360doc）</a> · <a href="https://www.360doc.cn/article/3449241_675278196.html" target="_blank" rel="noopener">于永正引述（360doc）</a></li>
+              <li>2026 年北京高考语文解析（腾讯新闻，2026-06-08）<span class="tag tag-index">经新闻核对</span><br /><a href="https://news.qq.com/rain/a/20260608A08HWK00" target="_blank" rel="noopener">news.qq.com</a></li>
+              <li>《声律启蒙》利弊讨论综合帖（什么值得买，2026-09-01）<span class="tag tag-opinion">通俗讨论</span><br /><a href="https://post.smzdm.com/p/a6zdk4ke/" target="_blank" rel="noopener">post.smzdm.com</a></li>
+            </ul>
+
+            <details>
+              <summary>未能核实 / 证据空白清单（点开看）</summary>
+              <ul>
+                <li><strong>CNKI 全文：</strong>多数期刊论文（王宁 2018、胡宏锂 2011 等）与王荣生 2014 年专著未能调阅全文，相关论断来自摘要或二手转引。</li>
+                <li><strong>无长期/随机对照证据：</strong>中英文检索均未找到“小学轻量文言浸润→初中/高考成绩”的受控研究。</li>
+                <li><strong>“记忆黄金期”：</strong>多处重复，但没有一篇给出所依据的现代实验出处，按传统经验看待。</li>
+                <li><strong>二语习得理论用于文言：</strong>未找到文言专门研究，第 05 节为类比推演，并已注明其局限（无母语者、无交际需求、考试考显性语法）。</li>
+                <li><strong>钱理群论文言：</strong>未找到专门文章，仅有其一般语文教育立场。</li>
+                <li><strong>北京高考文言单独分值：</strong>所查解析只给出 5 道题与考查内容，未给出单独分值，本页未引用分数。</li>
+                <li><strong>蔡思宜的说法：</strong>台湾课纲/会考语境且为付费课程推广，不能直接移植到北京，仅作从业者观点参考。</li>
+                <li><strong>埃利“图书洪流”实验：</strong>仅见于通俗二语习得综述转引，原文未检索到，未作为证据使用。</li>
+              </ul>
+            </details>
+          </section>
+
+          <footer>
+            本页为 2026 年 11 月 15 日的一次性检索综述，内容固定于检索当日，不会自动更新。文中观点均属其作者；“主流共识”指多位学者与课标、教材设计相互印证的判断，不等于实证结论。涉及孩子个体差异，最终做法请结合她的实际反应调整。
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Scroll-spy for the table of contents (in-memory UI state only).
+      (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        if (!('IntersectionObserver' in window)) return;
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              links.forEach(function (a) { a.classList.remove('active'); });
+              var link = map[e.target.id];
+              if (link) link.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-12% 0px -70% 0px' });
+        Object.keys(map).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) obs.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>
